@@ -1,5 +1,7 @@
 export default function Home() {
     return (
-        <h1>Juan Pedro Galarza</h1>
+        <main className="main">
+            <h1>Juan Pedro Galarza</h1>
+        </main>
     )
 }

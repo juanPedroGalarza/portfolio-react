@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import "../styles/Nav.css"
 
 export default function Nav() {
     const links = [
@@ -7,12 +8,11 @@ export default function Nav() {
     ]
     function printList(l){
         return (
-            <Link to={l.to} key={l.name}>{l.name}</Link>
+            <Link to={l.to} key={l.name} className="nav-item">{l.name}</Link>
         )
     }
     return (
-        <nav>
-            <p>nav</p>
+        <nav className="nav">
             {links.map(printList)}
         </nav>
     )

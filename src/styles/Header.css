@@ -1,0 +1,16 @@
+.header{
+    min-height: 15vh;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background-color: #3e1a75;
+    transition: all 1s;
+}
+.header-logo{
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+}

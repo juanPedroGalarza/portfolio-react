@@ -1,0 +1,9 @@
+.nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.nav-item{
+    text-decoration: none;
+    padding: 10px;
+}

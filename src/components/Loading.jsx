@@ -7,7 +7,6 @@ export default function Loading() {
     }
     return (
         <div className="loading-container">
-            <div className="background"/>
             <PulseLoader
                 color="#3e1a75"
                 cssOverride={override}

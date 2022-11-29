@@ -5,19 +5,13 @@
   color: #ccc;
   font-family: "Roboto";
 }
+body{
+  background-color: #202024;
+}
 .main{
   min-height: 85vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-.background{
-  position: fixed;
-  top: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100vh;
-  object-fit: cover;
-  background-color: #202024;
 }

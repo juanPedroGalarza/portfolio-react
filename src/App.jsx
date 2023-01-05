@@ -8,17 +8,19 @@ const Proyects = lazy(()=>import('./pages/Proyects'))
 
 function App() {
   return (
-    <BrowserRouter>
-      <Suspense fallback={<Loading />}>
-        <Routes>
-          <Route path='/' element={<MainLayout />}>
-            <Route index element={<Home />} />
-            <Route path='proyects' element={<Proyects />} />
-          </Route>
-          <Route path='/*' element={<Navigate to="/"/>} />
-        </Routes>
-      </Suspense>
-    </BrowserRouter>
+    <Suspense fallback={<Loading />}>
+      <BrowserRouter>
+        <MainLayout >
+          <Suspense fallback={<Loading />}>
+            <Routes>
+              <Route index element={<Home />} />
+              <Route path='/proyects' element={<Proyects />} />
+              <Route path='/*' element={<Navigate to="/" />} />
+            </Routes>
+          </Suspense>
+        </MainLayout>
+      </BrowserRouter>
+    </Suspense>
   );
 }
 

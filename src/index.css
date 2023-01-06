@@ -7,6 +7,8 @@
 }
 body{
   background-color: #202024;
+  background-image: url("/public/img/pattern03.png");
+  background-repeat: repeat;
 }
 .main{
   min-height: 85vh;

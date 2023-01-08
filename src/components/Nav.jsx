@@ -1,26 +1,35 @@
-import { Link, useLocation } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom"
 import "../styles/Nav.css"
+import Button from "@mui/material/Button"
 
 export default function Nav() {
     const location = useLocation()
+    const navigate = useNavigate()
     const links = [
         {to:"/",name:"Home"},
         {to:"/proyects",name:"Proyects"},
         {to:"/#contact",name:"Contact"}
     ]
     function printList(l) {
-        let active = ""
+        let active = false
         if (location.hash) {
-            location.hash === l.to.slice(1)? active = "active":null
+            location.hash === l.to.slice(1)? active = true:null
         } else if(location.pathname === l.to){
-            active = "active"
+            active = true
         }
         return (
-            <Link to={l.to}
+            <Button
+                variant="contained"
+                color="secondary"
+                disabled={active}
+                onClick={() => navigate(l.to)}
                 key={l.name}
-                className={`nav-item ${active}`}
-            >{l.name}</Link>
-        )
+            >
+                {/* <Typography variant="h4"> */}
+                    {l.name}
+                {/* </Typography> */}
+            </Button>
+        );
     }
     return (
         <nav className="nav">

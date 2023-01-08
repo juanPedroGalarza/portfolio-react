@@ -4,7 +4,7 @@ import logo from "../assets/img/logo.png"
 import { useEffect, useState } from "react";
 const styleHeaderTop = {
     backgroundColor: "#0000",
-    minHeight: "20vh"
+    minHeight: "15vh"
 }
 
 export default function Header() {

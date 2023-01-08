@@ -1,5 +1,5 @@
 .header{
-    min-height: 15vh;
+    min-height: 20vh;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -8,6 +8,7 @@
     top: 0;
     background-color: #3e1a75;
     transition: all 1s;
+    z-index: 2000;
 }
 .header-logo{
     height: 50px;

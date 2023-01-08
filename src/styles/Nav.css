@@ -11,3 +11,7 @@
     background-color: #fff6;
     box-shadow: 0 0 8px 4px #fff5;
 }
+.nav-item.active{
+    filter: invert(75%);
+    scale: (1.1);
+}

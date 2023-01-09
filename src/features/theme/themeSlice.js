@@ -1,10 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const colorSlice = createSlice({
-  name: "color",
-  initialState: {
-    theme: "dark"
-  },
+export const themeSlice = createSlice({
+  name: "theme",
+  initialState: "dark",
   reducers: {
     changeTheme: (state,action) => {
       state.theme = action.payload
@@ -12,6 +10,6 @@ export const colorSlice = createSlice({
   }
 })
 
-export const {changeTheme} = colorSlice.actions
+export const {changeTheme} = themeSlice.actions
 
-export default colorSlice.reducer
+export default themeSlice.reducer

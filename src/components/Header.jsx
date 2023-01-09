@@ -1,7 +1,7 @@
 import Nav from "./Nav";
 import "../styles/Header.css"
-import logo from "../assets/img/logo.png"
 import { useEffect, useState } from "react";
+import Typography from '@mui/material/Typography'
 const styleHeaderTop = {
     backgroundColor: "#0000",
     minHeight: "15vh"
@@ -20,7 +20,9 @@ export default function Header() {
     return (
         <header className="header"
             style={isTop?styleHeaderTop:null}>
-            <img className="header-logo" src={logo} alt="logo" />
+            <Typography variant="h4">
+                Juan Pedro Galarza
+            </Typography>
             <Nav />
         </header>
     )

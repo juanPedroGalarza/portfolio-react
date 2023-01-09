@@ -1,6 +1,7 @@
 import { useLocation, useNavigate } from "react-router-dom"
 import "../styles/Nav.css"
 import Button from "@mui/material/Button"
+import Typography from "@mui/material/Typography"
 
 export default function Nav() {
     const location = useLocation()
@@ -25,9 +26,9 @@ export default function Nav() {
                 onClick={() => navigate(l.to)}
                 key={l.name}
             >
-                {/* <Typography variant="h4"> */}
+                <Typography variant="subtitle">
                     {l.name}
-                {/* </Typography> */}
+                </Typography>
             </Button>
         );
     }

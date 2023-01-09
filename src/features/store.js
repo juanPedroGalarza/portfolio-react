@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import colorReducer from "./theme/themeSlice";
+import themeReducer from "./theme/themeSlice";
 
 export const store = configureStore({
   reducer: {
-    color: colorReducer
+    theme: themeReducer
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware({
     inmutableCheck: false,

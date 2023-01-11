@@ -2,13 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  color: #ccc;
   font-family: "Roboto";
-}
-body{
-  background-color: #202024;
-  background-image: url("/public/img/pattern03.png");
-  background-repeat: repeat;
 }
 .main{
   min-height: 85vh;

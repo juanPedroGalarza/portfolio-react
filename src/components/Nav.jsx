@@ -2,6 +2,7 @@ import { useLocation, useNavigate } from "react-router-dom"
 import "../styles/Nav.css"
 import Button from "@mui/material/Button"
 import Typography from "@mui/material/Typography"
+import ChangeThemeButton from "./buttons/ChangeThemeButton"
 
 export default function Nav() {
     const location = useLocation()
@@ -35,6 +36,7 @@ export default function Nav() {
     return (
         <nav className="nav">
             {links.map(printList)}
+            <ChangeThemeButton />
         </nav>
     )
 }

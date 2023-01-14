@@ -1,10 +1,21 @@
 import { useLocation, useNavigate } from "react-router-dom"
-import "../styles/Nav.css"
 import Button from "@mui/material/Button"
 import Typography from "@mui/material/Typography"
 import ChangeThemeButton from "./buttons/ChangeThemeButton"
+import AppBarStyled from './StyledComponents/AppBarStyled'
+import Toolbar from '@mui/material/Toolbar'
+import { useEffect, useState } from "react"
+import DrawerNav from "./DrawerNav"
 
 export default function Nav() {
+    const [isTop, setIsTop] = useState("true")
+    function handleScroll() {
+        window.scrollY > 0 ? setIsTop(""):setIsTop("true")
+    }
+    useEffect(() => {
+        window.addEventListener("scroll",handleScroll)
+        return ()=> window.removeEventListener("scroll",handleScroll)
+    },[])
     const location = useLocation()
     const navigate = useNavigate()
     const links = [
@@ -22,7 +33,7 @@ export default function Nav() {
         return (
             <Button
                 variant="contained"
-                color="secondary"
+                color="primary"
                 disabled={active}
                 onClick={() => navigate(l.to)}
                 key={l.name}
@@ -34,9 +45,21 @@ export default function Nav() {
         );
     }
     return (
-        <nav className="nav">
-            {links.map(printList)}
-            <ChangeThemeButton />
-        </nav>
+        <AppBarStyled
+            position="sticky"
+            color={isTop ? "transparent" : "secondary"}
+            istop={isTop}
+        >
+            <DrawerNav>
+                {links.map(printList)}
+            </DrawerNav>
+            <Typography variant="h4">
+                Juan Pedro Galarza
+            </Typography>
+            <Toolbar className="tool-bar">
+                {links.map(printList)}
+                <ChangeThemeButton />
+            </Toolbar>
+        </AppBarStyled>
     )
 }

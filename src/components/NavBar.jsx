@@ -50,9 +50,7 @@ export default function Nav() {
             color={isTop ? "transparent" : "default"}
             istop={isTop}
         >
-            <DrawerNav>
-                {links.map(printList)}
-            </DrawerNav>
+            <DrawerNav list={links} />
             <Typography variant="h4">
                 Juan Pedro Galarza
             </Typography>

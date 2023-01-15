@@ -1,17 +1,14 @@
 import PulseLoader from "react-spinners/PulseLoader"
-import "../styles/Loading.css"
+import LoadingStyled from "./StyledComponents/LoadingStyled"
+
 
 export default function Loading() {
-    const override = {
-        margin: 0
-    }
     return (
-        <div className="loading-container">
+        <LoadingStyled >
             <PulseLoader
-                color="#3e1a75"
-                cssOverride={override}
+                color="none"
                 size="5rem"
             />
-        </div>
+        </LoadingStyled>
     )
 }

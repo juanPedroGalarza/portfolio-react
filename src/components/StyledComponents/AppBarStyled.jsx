@@ -1,15 +1,14 @@
 import { AppBar, styled } from "@mui/material";
 
 const AppBarStyled = styled(AppBar)(({ theme, istop }) => ({
-  minHeight: "15vh",
-  display: "flex",
   justifyContent: "space-around",
-  flexFlow: "row wrap",
+  flexFlow: "row wrap-reverse",
   alignItems: "center",
   position: "sticky",
   top: 0,
-  transition: "all 20ms",
+  minHeight: "15vh",
   boxShadow: istop && "none",
+  transition: "all 20ms",
   "& .menu-button": {
     display: "none"
   },

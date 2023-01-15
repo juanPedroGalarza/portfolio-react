@@ -6,7 +6,10 @@ const DrawerNavStyled = styled(Drawer)(({ theme }) => ({
   },
   "& .MuiDrawer-paper": {
     gap: ".5rem",
-    padding: "2rem",
+    alignItems: "center",
+    "& .MuiTypography-root": {
+      padding: "1rem 2rem"
+    }
   }
 }))
 

@@ -32,7 +32,7 @@ export default function Nav() {
         }
         return (
             <Button
-                variant="contained"
+                variant="text"
                 color="primary"
                 disabled={active}
                 onClick={() => navigate(l.to)}
@@ -47,7 +47,7 @@ export default function Nav() {
     return (
         <AppBarStyled
             position="sticky"
-            color={isTop ? "transparent" : "secondary"}
+            color={isTop ? "transparent" : "default"}
             istop={isTop}
         >
             <DrawerNav>

@@ -1,21 +1,31 @@
 import { Box, styled } from "@mui/material";
-import { blueGrey } from "@mui/material/colors";
+import BackgroundBars from "./BackgroundBars";
 
 const BoxBody = styled(Box)(({ theme }) => ({
   color: theme.palette.text.primary,
   minHeight: "100vh",
+  width: "100%",
+  "& .bcg-bar": {
+    position: "fixed"
+  },
   "&:before": {
     content: '""',
     position: "fixed",
     width: "100%",
     minHeight: "100vh",
     backgroundColor: theme.palette.background.default,
-    backgroundImage: "url('img/pattern03.png')",
-    backgroundRepeat: "repeat",
-    zIndex: -1
+    zIndex: -1,
   },
 }))
 
 export default function MainLayoutBody(props) {
-  return <BoxBody>{props.children}</BoxBody>
+  return (
+    <BoxBody>
+      <BackgroundBars
+        color="error"
+        secondcolor="info"
+        className="bcg-bar"
+      />
+    {props.children}
+  </BoxBody>)
 }

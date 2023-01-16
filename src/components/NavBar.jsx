@@ -32,7 +32,7 @@ export default function Nav() {
         }
         return (
             <Button
-                variant="text"
+                variant="contained"
                 color="primary"
                 disabled={active}
                 onClick={() => navigate(l.to)}

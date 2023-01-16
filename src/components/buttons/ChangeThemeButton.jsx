@@ -21,7 +21,8 @@ export default function ChangeThemeButton(props) {
           dense
         >
           <ListItemIcon>
-            <Icon>{themeName === "dark" ?
+            <Icon color="primary"
+            >{themeName === "dark" ?
               "dark_mode_rounded_icon" :
               "light_mode_rounded_icon"}</Icon>
           </ListItemIcon>
@@ -34,8 +35,10 @@ export default function ChangeThemeButton(props) {
   }
   return (
     <IconButton aria-label="change theme"
+      color="primary"
       onClick={turnTheme}>
-      <Icon>{themeName === "dark" ?
+      <Icon color="primary"
+      >{themeName === "dark" ?
         "dark_mode_rounded_icon" :
         "light_mode_rounded_icon"}</Icon>
     </IconButton>

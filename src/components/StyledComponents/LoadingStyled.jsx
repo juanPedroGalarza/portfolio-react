@@ -7,7 +7,7 @@ const LoadingStyled = styled(Box)(({ theme }) => ({
   justifyContent: "center",
   alignItems: "center",
   position: "relative",
-  backgroundColor: theme.palette.background.paper,
+  backgroundColor: theme.palette.background.default,
   "& span": {
     margin: 0,
     gap: 5

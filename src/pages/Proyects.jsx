@@ -1,19 +1,42 @@
 import { Suspense } from "react"
 import { lazy } from "react"
 import "../styles/Proyects.css"
-
-const BorderB = lazy(() => import("../components/borders/BorderB"))
-import border from "../assets/img/border02.png"
 import myTineraries from "../assets/img/MyTineraries.png"
 import Loading from "../components/Loading"
+
+const ProyectCard = lazy(() => import("../components/proyects/ProyectCard"))
+
+
 export default function Proyects() {
-    const list = [1, 2, 3, 4, 5, 6]
+    const list = [
+        {
+            proyectName: 1,
+            img:myTineraries
+        }, 
+        {
+            proyectName: 2,
+            img:myTineraries
+        }, 
+        {
+            proyectName: 3,
+            img:myTineraries
+        }, 
+        {
+            proyectName: 4,
+            img:myTineraries
+        }, 
+        {
+            proyectName: 5,
+            img:myTineraries
+        }, 
+        {
+            proyectName: 6,
+            img:myTineraries
+        }]
     function printItem(item) {
         return (
-            <Suspense fallback={<Loading />} key={item}>
-                <BorderB border={border}>
-                    <img src={myTineraries} className="proyect-img"/>
-                </BorderB>
+            <Suspense fallback={<Loading />} key={item.proyectName}>
+                <ProyectCard data={item} />
             </Suspense>
         )
     }

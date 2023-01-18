@@ -1,7 +1,8 @@
-import { Button, CardActionArea, CardActions, CardContent, CardMedia, Typography } from "@mui/material";
+import { Button, CardActionArea, CardActions, CardContent, Typography } from "@mui/material";
 import { useState } from "react";
 import { OneBar } from "../StyledComponents/BackgroundBars";
 import ProyectCardStyled from "../StyledComponents/proyects/ProyectCardStyled";
+import ProyectImageCard from "./ProyectImageCard";
 
 export default function ProyectCard(props) {
   const { img, proyectName } = props.data
@@ -15,6 +16,7 @@ export default function ProyectCard(props) {
       <CardActionArea
         onClick={toggleMoreInfo}
         info={showMoreInfo.toString()}
+        className={showMoreInfo ? "rotate" : ""}
       >
         {showMoreInfo ?
           <CardContent>
@@ -22,29 +24,29 @@ export default function ProyectCard(props) {
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ut necessitatibus voluptates ad iste nemo. Consequuntur qui, laborum nihil natus porro ducimus.
             </Typography>
           </CardContent>
-          : <CardMedia
-            component="img"
-            image={img}
-            heigt="250"
-            alt={proyectName}
-          />
+          : 
+          <ProyectImageCard image={img} title={proyectName} />
         }
-        <OneBar color="primary" height="3" />
-        <OneBar color="primary" height="2" second="true" />
+        <OneBar color="primary" height="3" className="card-bar" />
+        <OneBar color="info" height="2" second="true" className="card-bar" />
       </CardActionArea>
-      <CardActions>
+      <CardActions disableSpacing >
         <Button
-          color="primary"
-          variant="outlained"
+          color="info"
+          variant="outlined"
+          size="small"
           onClick={toggleMoreInfo}
-        >More Info</Button>
+        >{showMoreInfo?"Hide":"More"} Info
+        </Button>
         <Button
-          color="primary"
-          variant="outlained"
+          color="warning"
+          variant="outlined"
+          size="small"
         >Repository</Button>
         <Button
-          color="primary"
-          variant="outlained"
+          color="error"
+          variant="outlined"
+          size="small"
         >View proyect</Button>
       </CardActions>
     </ProyectCardStyled>

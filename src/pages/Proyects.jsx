@@ -3,6 +3,8 @@ import { lazy } from "react"
 import "../styles/Proyects.css"
 import myTineraries from "../assets/img/MyTineraries.png"
 import Loading from "../components/Loading"
+import MainStyled from "../components/StyledComponents/MainStyled"
+import { Grid } from "@mui/material"
 
 const ProyectCard = lazy(() => import("../components/proyects/ProyectCard"))
 
@@ -33,19 +35,21 @@ export default function Proyects() {
             proyectName: 6,
             img:myTineraries
         }]
-    function printItem(item) {
+    function printCards(item,index) {
         return (
-            <Suspense fallback={<Loading />} key={item.proyectName}>
+            <Grid item xs={12} sm={6} md={5} lg={4} key={index}>
                 <ProyectCard data={item} />
-            </Suspense>
+            </Grid>
         )
     }
     return (
-        <main className="main">
+        <MainStyled>
             <h1>My Proyects</h1>
-            <div className="listProyects">
-                {list.map(printItem)}
-            </div>
-        </main>
+            <Grid container spacing={5}>
+            <Suspense fallback={<Loading />} >
+                    {list.map(printCards)}
+            </Suspense>
+            </Grid>
+        </MainStyled>
     )
 }

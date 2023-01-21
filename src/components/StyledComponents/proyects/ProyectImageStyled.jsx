@@ -5,6 +5,7 @@ const ProyectImageStyled = styled(Box)(({ theme }) => ({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
+  height:"100%",
   "& .MuiTypography-root": {
     position: "absolute",
     display:"inline",
@@ -13,6 +14,9 @@ const ProyectImageStyled = styled(Box)(({ theme }) => ({
     color: theme.palette.common.white,
     backgroundColor: `${alpha(theme.palette.grey[600], 0.67)}`,
     padding: ".5rem"
+  },
+  "& .MuiCardMedia-img": {
+    maxHeight: "100%"
   }
 }))
 

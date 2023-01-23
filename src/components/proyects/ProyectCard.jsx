@@ -5,7 +5,15 @@ import ProyectCardStyled from "../StyledComponents/proyects/ProyectCardStyled";
 import ProyectImageCard from "./ProyectImageCard";
 
 export default function ProyectCard(props) {
-  const { img, proyectName } = props.data
+  const { 
+    picture,
+    name, 
+    description,
+    repositories,
+    urls
+  } = props.data
+  
+
   const [showMoreInfo, setShowMoreInfo] = useState(false)
   const toggleMoreInfo = () => setShowMoreInfo(v => !v)
 
@@ -20,12 +28,10 @@ export default function ProyectCard(props) {
       >
         {showMoreInfo ?
           <CardContent>
-            <Typography>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ut necessitatibus voluptates ad iste nemo. Consequuntur qui, laborum nihil natus porro ducimus.
-            </Typography>
+            <Typography>{description}</Typography>
           </CardContent>
           : 
-          <ProyectImageCard image={img} title={proyectName} />
+          <ProyectImageCard image={picture} title={name} />
         }
         <OneBar color="primary" height="3" className="card-bar" />
         <OneBar color="info" height="2" second="true" className="card-bar" />

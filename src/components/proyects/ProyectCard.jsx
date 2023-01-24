@@ -1,5 +1,6 @@
 import { Button, CardActionArea, CardActions, CardContent, Typography } from "@mui/material";
 import { useState } from "react";
+import SplitButtonHref from "../buttons/SplitButtonHref";
 import { OneBar } from "../StyledComponents/BackgroundBars";
 import ProyectCardStyled from "../StyledComponents/proyects/ProyectCardStyled";
 import ProyectImageCard from "./ProyectImageCard";
@@ -39,21 +40,13 @@ export default function ProyectCard(props) {
       <CardActions disableSpacing >
         <Button
           color="info"
-          variant="outlined"
+          variant="contained"
           size="small"
           onClick={toggleMoreInfo}
         >{showMoreInfo?"Hide":"More"} Info
         </Button>
-        <Button
-          color="warning"
-          variant="outlined"
-          size="small"
-        >Repository</Button>
-        <Button
-          color="error"
-          variant="outlined"
-          size="small"
-        >View proyect</Button>
+        <SplitButtonHref options={repositories} nameList={"repositories"} />
+        <SplitButtonHref options={urls} nameList={"urls"} />
       </CardActions>
     </ProyectCardStyled>
   )

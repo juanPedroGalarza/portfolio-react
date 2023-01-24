@@ -2,7 +2,8 @@ import { Card, styled } from "@mui/material";
 
 const ProyectCardStyled = styled(Card)(({ theme }) => ({
   position: "relative",
-    minHeight: 360,
+  minHeight: 360,
+  overflow: "visible",
   "& .MuiCardActionArea-root": {
     height: 250,
     overflow: "hidden",

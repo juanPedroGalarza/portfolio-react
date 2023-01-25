@@ -1,14 +1,19 @@
+import * as React from "react";
 import { CardMedia, Typography } from "@mui/material";
 import ProyectImageStyled from "../StyledComponents/proyects/ProyectImageStyled";
 
-export default function ProyectImageCard(props) {
-  const {image, title} = props
+interface PropsInterface {
+  image: string,
+  title: string
+}
+
+const ProyectImageCard: React.FC<PropsInterface> = ({image, title}) => {
   return (
     <ProyectImageStyled>
       <CardMedia
         component="img"
         image={image}
-        heigt="100%"
+        height="100%"
         alt={title}
       />
       <Typography
@@ -20,3 +25,4 @@ export default function ProyectImageCard(props) {
     </ProyectImageStyled>
   )
 }
+export default ProyectImageCard

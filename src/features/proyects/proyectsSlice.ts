@@ -1,7 +1,11 @@
 import { createSlice, Slice } from "@reduxjs/toolkit";
-import proyectsData from "./proyectsData";
+import proyectsData, { Proyect } from "./proyectsData";
 
-export const proyectsSlice: Slice = createSlice({
+export interface ProyectsState {
+  proyects: Array<Proyect>
+}
+
+export const proyectsSlice: Slice<ProyectsState> = createSlice({
   name: "proyectsData",
   initialState: proyectsData,
   reducers: {

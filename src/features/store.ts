@@ -1,16 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { ToolkitStore } from "@reduxjs/toolkit/dist/configureStore";
-import { Proyect } from "./proyects/proyectsData";
-import proyectsReducer from "./proyects/proyectsSlice";
-import themeReducer from "./theme/themeSlice";
-
+import proyectsReducer, { ProyectsState } from "./proyects/proyectsSlice";
+import themeReducer, { ThemeState } from "./theme/themeSlice";
 export interface StoreInterface {
-  theme: {
-    themeName: string
-  },
-  proyectsData: {
-    proyects: Array<Proyect>
-  }
+  theme: ThemeState,
+  proyectsData: ProyectsState
 }
 
 export const store: ToolkitStore<StoreInterface> = configureStore({

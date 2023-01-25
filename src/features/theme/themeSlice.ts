@@ -1,6 +1,8 @@
 import { createSlice, Slice } from "@reduxjs/toolkit";
 
-export const themeSlice: Slice = createSlice({
+export interface ThemeState {themeName:string}
+
+export const themeSlice: Slice<ThemeState> = createSlice({
   name: "theme",
   initialState: {
     themeName: "dark"

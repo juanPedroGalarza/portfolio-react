@@ -3,7 +3,7 @@ interface UrlNamed {
   url: string
 }
 
-interface Proyect {
+export interface Proyect {
   name: string,
   picture: string,
   description: string,

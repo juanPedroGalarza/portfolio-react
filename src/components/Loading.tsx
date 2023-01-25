@@ -1,3 +1,4 @@
+import * as React from "react"
 import PulseLoader from "react-spinners/PulseLoader"
 import LoadingStyled from "./StyledComponents/LoadingStyled"
 

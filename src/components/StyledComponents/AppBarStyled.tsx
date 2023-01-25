@@ -1,6 +1,6 @@
-import { AppBar, styled } from "@mui/material";
+import { AppBar, styled, Theme } from "@mui/material";
 
-const AppBarStyled = styled(AppBar)(({ theme, istop }) => ({
+const AppBarStyled = styled(AppBar)(({ theme, istop }:{theme?:Theme, istop:boolean}) => ({
   justifyContent: "space-around",
   flexFlow: "row wrap-reverse",
   alignItems: "center",

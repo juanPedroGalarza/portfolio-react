@@ -4,26 +4,28 @@ import Typography from "@mui/material/Typography"
 import ChangeThemeButton from "./buttons/ChangeThemeButton"
 import AppBarStyled from './StyledComponents/AppBarStyled'
 import Toolbar from '@mui/material/Toolbar'
-import { useEffect, useState } from "react"
+import React from "react"
 import DrawerNav from "./DrawerNav"
 
+export type LinkItem = {to:string,name:string}
+
 export default function Nav() {
-    const [isTop, setIsTop] = useState("true")
-    function handleScroll() {
-        window.scrollY > 0 ? setIsTop(""):setIsTop("true")
+    const [isTop, setIsTop] = React.useState<boolean>(true)
+    function handleScroll():void {
+        window.scrollY > 0 ? setIsTop(false):setIsTop(true)
     }
-    useEffect(() => {
+    React.useEffect(() => {
         window.addEventListener("scroll",handleScroll)
         return ()=> window.removeEventListener("scroll",handleScroll)
     },[])
     const location = useLocation()
     const navigate = useNavigate()
-    const links = [
+    const links: Array<LinkItem> = [
         {to:"/",name:"Home"},
         {to:"/proyects",name:"Proyects"},
         {to:"/#contact",name:"Contact"}
     ]
-    function printList(l) {
+    function printList(l: LinkItem) {
         let active = false
         if (location.hash) {
             location.hash === l.to.slice(1)? active = true:null
@@ -38,7 +40,7 @@ export default function Nav() {
                 onClick={() => navigate(l.to)}
                 key={l.name}
             >
-                <Typography variant="subtitle">
+                <Typography variant="subtitle1">
                     {l.name}
                 </Typography>
             </Button>

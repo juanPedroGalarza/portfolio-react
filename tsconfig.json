@@ -2,12 +2,13 @@
   "compilerOptions": {
       "outDir": "./dist/",
       "sourceMap": true,
-      "strictNullChecks": true,
-      "module": "es6",
+      "strictNullChecks": false,
+      "strict":true,
+      "module": "Node16",
       "jsx": "react",
       "target": "es6",
       "allowJs": true,
-      "moduleResolution": "Node"
+      "moduleResolution": "Node",
   },
   "include": [
       "./src/"

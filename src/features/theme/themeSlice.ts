@@ -1,6 +1,6 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, Slice } from "@reduxjs/toolkit";
 
-export const themeSlice = createSlice({
+export const themeSlice: Slice = createSlice({
   name: "theme",
   initialState: {
     themeName: "dark"

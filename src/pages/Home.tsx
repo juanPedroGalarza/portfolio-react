@@ -1,3 +1,4 @@
+import React from "react"
 import { lazy, Suspense } from "react"
 import Loading from "../components/Loading"
 import MainStyled from "../components/StyledComponents/MainStyled"

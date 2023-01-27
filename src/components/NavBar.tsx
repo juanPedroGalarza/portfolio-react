@@ -14,7 +14,7 @@ interface LinkForButton {
 
 export default function Nav() {
     const [isTop, setIsTop] = React.useState<boolean>(true)
-    function handleScroll() {
+    function handleScroll():void {
         window.scrollY > 0 ? setIsTop(false):setIsTop(true)
     }
     React.useEffect(() => {

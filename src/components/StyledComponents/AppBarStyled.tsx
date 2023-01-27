@@ -1,6 +1,10 @@
 import { AppBar, styled } from "@mui/material";
 
-const AppBarStyled = styled(AppBar)(({ theme, istop }) => ({
+interface MyProps {
+  istop: boolean
+}
+
+const AppBarStyled = styled(AppBar)<MyProps>(({ theme, istop }) => ({
   justifyContent: "space-around",
   flexFlow: "row wrap-reverse",
   alignItems: "center",

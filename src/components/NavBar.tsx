@@ -4,26 +4,31 @@ import Typography from "@mui/material/Typography"
 import ChangeThemeButton from "./buttons/ChangeThemeButton"
 import AppBarStyled from './StyledComponents/AppBarStyled'
 import Toolbar from '@mui/material/Toolbar'
-import { useEffect, useState } from "react"
 import DrawerNav from "./DrawerNav"
+import React from "react"
+
+interface LinkForButton {
+    name: string,
+    to: string
+}
 
 export default function Nav() {
-    const [isTop, setIsTop] = useState("true")
+    const [isTop, setIsTop] = React.useState<boolean>(true)
     function handleScroll() {
-        window.scrollY > 0 ? setIsTop(""):setIsTop("true")
+        window.scrollY > 0 ? setIsTop(false):setIsTop(true)
     }
-    useEffect(() => {
+    React.useEffect(() => {
         window.addEventListener("scroll",handleScroll)
         return ()=> window.removeEventListener("scroll",handleScroll)
     },[])
     const location = useLocation()
     const navigate = useNavigate()
-    const links = [
+    const links: LinkForButton[] = [
         {to:"/",name:"Home"},
         {to:"/proyects",name:"Proyects"},
         {to:"/#contact",name:"Contact"}
     ]
-    function printList(l) {
+    function printList(l:LinkForButton) {
         let active = false
         if (location.hash) {
             location.hash === l.to.slice(1)? active = true:null
@@ -35,10 +40,10 @@ export default function Nav() {
                 variant="contained"
                 color="primary"
                 disabled={active}
-                onClick={() => navigate(l.to)}
+                onClick={() => {navigate(l.to)}}
                 key={l.name}
             >
-                <Typography variant="subtitle">
+                <Typography variant="subtitle1">
                     {l.name}
                 </Typography>
             </Button>

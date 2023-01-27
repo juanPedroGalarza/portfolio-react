@@ -4,10 +4,13 @@ import Typography from "@mui/material/Typography"
 import ChangeThemeButton from "./buttons/ChangeThemeButton"
 import AppBarStyled from './StyledComponents/AppBarStyled'
 import Toolbar from '@mui/material/Toolbar'
-import React from "react"
 import DrawerNav from "./DrawerNav"
+import React from "react"
 
-export type LinkItem = {to:string,name:string}
+interface LinkForButton {
+    name: string,
+    to: string
+}
 
 export default function Nav() {
     const [isTop, setIsTop] = React.useState<boolean>(true)
@@ -20,12 +23,12 @@ export default function Nav() {
     },[])
     const location = useLocation()
     const navigate = useNavigate()
-    const links: Array<LinkItem> = [
+    const links: LinkForButton[] = [
         {to:"/",name:"Home"},
         {to:"/proyects",name:"Proyects"},
         {to:"/#contact",name:"Contact"}
     ]
-    function printList(l: LinkItem) {
+    function printList(l:LinkForButton) {
         let active = false
         if (location.hash) {
             location.hash === l.to.slice(1)? active = true:null
@@ -37,7 +40,7 @@ export default function Nav() {
                 variant="contained"
                 color="primary"
                 disabled={active}
-                onClick={() => navigate(l.to)}
+                onClick={() => {navigate(l.to)}}
                 key={l.name}
             >
                 <Typography variant="subtitle1">

@@ -1,22 +1,26 @@
 import { Button, CardActionArea, CardActions, CardContent, Typography } from "@mui/material";
-import { useState } from "react";
+import React from "react";
+import { Proyect } from "../../features/proyects/proyectsData";
 import SplitButtonHref from "../buttons/SplitButtonHref";
 import { OneBar } from "../StyledComponents/BackgroundBars";
 import ProyectCardStyled from "../StyledComponents/proyects/ProyectCardStyled";
 import ProyectImageCard from "./ProyectImageCard";
 
-export default function ProyectCard(props) {
+interface MyProps {
+  data: Proyect
+}
+
+export default function ProyectCard({data}:MyProps) {
   const { 
     picture,
     name, 
     description,
     repositories,
     urls
-  } = props.data
-  
+  }: Proyect = data
 
-  const [showMoreInfo, setShowMoreInfo] = useState(false)
-  const toggleMoreInfo = () => setShowMoreInfo(v => !v)
+  const [showMoreInfo, setShowMoreInfo] = React.useState<boolean>(false)
+  const toggleMoreInfo = ():void => setShowMoreInfo((v:boolean):boolean => !v)
 
   return (
     <ProyectCardStyled
@@ -24,7 +28,6 @@ export default function ProyectCard(props) {
     >
       <CardActionArea
         onClick={toggleMoreInfo}
-        info={showMoreInfo.toString()}
         className={showMoreInfo ? "rotate" : ""}
       >
         {showMoreInfo ?
@@ -34,8 +37,8 @@ export default function ProyectCard(props) {
           : 
           <ProyectImageCard image={picture} title={name} />
         }
-        <OneBar color="primary" height="3" className="card-bar" />
-        <OneBar color="info" height="2" second="true" className="card-bar" />
+        <OneBar bcgcolor="primary" height="3" className="card-bar" />
+        <OneBar bcgcolor="info" height="2" second={true} className="card-bar" />
       </CardActionArea>
       <CardActions disableSpacing >
         <Button

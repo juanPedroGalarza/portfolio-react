@@ -1,4 +1,5 @@
-import { Box, styled } from "@mui/material";
+import { Box, BoxProps, styled } from "@mui/material";
+import React from "react";
 import BackgroundBars from "./BackgroundBars";
 
 const BoxBody = styled(Box)(({ theme }) => ({
@@ -18,11 +19,11 @@ const BoxBody = styled(Box)(({ theme }) => ({
   },
 }))
 
-export default function MainLayoutBody(props) {
+export default function MainLayoutBody(props: BoxProps) {
   return (
     <BoxBody>
       <BackgroundBars
-        color="error"
+        bcgcolor="error"
         secondcolor="info"
         className="bcg-bar"
       />

@@ -1,4 +1,4 @@
-interface UrlNamed {
+export interface UrlNamed {
   name: string,
   url: string
 }

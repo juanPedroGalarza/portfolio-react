@@ -1,4 +1,5 @@
-import { styled, Container } from "@mui/material";
+import { styled, Container, ContainerProps } from "@mui/material";
+import React from "react";
 
 const MainStyled = styled(Container)(({ theme }) => ({
   minHeight: "85vh",
@@ -7,7 +8,7 @@ const MainStyled = styled(Container)(({ theme }) => ({
   alignItems: "center",
   gap: "4rem",
 }))
-export default function Main(props) {
+export default function Main(props:ContainerProps) {
   return (
     <MainStyled
     maxWidth="xl"

@@ -56,7 +56,7 @@ export default function Nav() {
             istop={isTop}
         >
             <DrawerNav list={links} />
-            <Typography variant="h4">
+            <Typography variant="subtitle1">
                 Juan Pedro Galarza
             </Typography>
             <Toolbar className="tool-bar">

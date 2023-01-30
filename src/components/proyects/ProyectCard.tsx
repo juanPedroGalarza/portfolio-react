@@ -38,7 +38,7 @@ export default function ProyectCard({data}:MyProps) {
           <ProyectImageCard image={picture} title={name} />
         }
         <OneBar bcgcolor="primary" height="3" className="card-bar" />
-        <OneBar bcgcolor="info" height="2" second={true} className="card-bar" />
+        <OneBar bcgcolor="info" height="2" second="true" className="card-bar" />
       </CardActionArea>
       <CardActions disableSpacing >
         <Button

@@ -1,7 +1,7 @@
 import { AppBar, styled } from "@mui/material";
 
 interface MyProps {
-  istop: boolean
+  istop: "true" | "false"
 }
 
 const AppBarStyled = styled(AppBar)<MyProps>(({ theme, istop }) => ({
@@ -11,7 +11,7 @@ const AppBarStyled = styled(AppBar)<MyProps>(({ theme, istop }) => ({
   position: "sticky",
   top: 0,
   minHeight: "15vh",
-  boxShadow: istop && "none",
+  boxShadow: istop==="true"? "none":null,
   transition: "all 20ms",
   "& .menu-button": {
     display: "none"

@@ -13,9 +13,9 @@ export interface LinkForButton {
 }
 
 export default function Nav() {
-    const [isTop, setIsTop] = React.useState<boolean>(true)
+    const [isTop, setIsTop] = React.useState<"true"|"false">("true")
     function handleScroll():void {
-        window.scrollY > 0 ? setIsTop(false):setIsTop(true)
+        window.scrollY > 0 ? setIsTop("false"):setIsTop("true")
     }
     React.useEffect(() => {
         window.addEventListener("scroll",handleScroll)
@@ -52,7 +52,7 @@ export default function Nav() {
     return (
         <AppBarStyled
             position="sticky"
-            color={isTop ? "transparent" : "default"}
+            color={isTop==="true" ? "transparent" : "default"}
             istop={isTop}
         >
             <DrawerNav list={links} />

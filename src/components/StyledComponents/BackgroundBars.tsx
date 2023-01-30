@@ -5,14 +5,14 @@ type ValidColors = "primary" | "secondary" | "error" | "warning" | "info" |"succ
 
 interface MyProps {
   bcgcolor: ValidColors,
-  second?: boolean,
+  second?: "true" | "false",
   secondcolor?:ValidColors
 }
 
 export const OneBar = styled(Box)<MyProps>(({ theme, bcgcolor, height, second }) => ({
   position: "absolute",
   top: 0,
-  right: second?"-40%":"-30%",
+  right: second==="true"?"-40%":"-30%",
   transform: "rotate(45deg)",
   width: "100%",
   height: height? `${height}rem`:"6rem",
@@ -30,7 +30,7 @@ export default function BackgroundBars(props:BoxProps & MyProps) {
   return (
     <React.Fragment>
       <OneBar {...props} />
-      <OneBar {...props} second={true} bcgcolor={props.secondcolor} />
+      <OneBar {...props} second="true" bcgcolor={props.secondcolor} />
     </React.Fragment>
   )
 }

@@ -1,6 +1,5 @@
 import { Suspense } from "react"
 import { lazy } from "react"
-import "../styles/Proyects.css"
 import Loading from "../components/Loading"
 import MainStyled from "../components/StyledComponents/MainStyled"
 import { Grid } from "@mui/material"

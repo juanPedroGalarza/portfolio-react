@@ -6,7 +6,7 @@ const MainStyled = styled(Container)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  gap: "4rem",
+  gap: "6rem",
 }))
 export default function Main(props:ContainerProps) {
   return (

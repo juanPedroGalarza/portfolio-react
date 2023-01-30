@@ -3,7 +3,6 @@ import React from 'react';
 import { lazy, Suspense } from 'react';
 import { useSelector } from 'react-redux';
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
-import './App.css';
 import Loading from './components/Loading';
 import { StoreInterface } from './features/store';
 const MainLayout = lazy(()=>import('./layouts/MainLayout'))

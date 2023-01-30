@@ -7,7 +7,7 @@ import Toolbar from '@mui/material/Toolbar'
 import DrawerNav from "./DrawerNav"
 import React from "react"
 
-interface LinkForButton {
+export interface LinkForButton {
     name: string,
     to: string
 }

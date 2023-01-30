@@ -1,18 +1,25 @@
-import { Box, Divider, Icon, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material'
+import React from 'react'
+import { Box, Divider, Icon, List, ListItem, ListItemButton, ListItemText } from '@mui/material'
 import IconButton from '@mui/material/IconButton'
-import { useState, useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router'
 import ChangeThemeButton from './buttons/ChangeThemeButton'
+import { LinkForButton } from './NavBar'
 import DrawerNavStyled from './StyledComponents/DrawerNavStyled'
 
+interface MyProps {
+  list: LinkForButton[]
+}
 
-export default function DrawerNav(props) {
-  const [isOpen, setIsOpen] = useState(false)
+export default function DrawerNav({list}:MyProps) {
+  const [isOpen, setIsOpen] = React.useState(false)
   const location = useLocation()
   const navigate = useNavigate()
-  const list = props.list
 
-  const printListItems = l => {
+  React.useEffect(() => {
+    setIsOpen(false)
+  },[location.pathname,location.hash])
+
+  const printListItems = (l:LinkForButton) => {
     let active = false
         if (location.hash) {
             location.hash === l.to.slice(1)? active = true:null
@@ -32,12 +39,11 @@ export default function DrawerNav(props) {
     )
   }
 
-  useEffect(() => {
-    setIsOpen(false)
-  },[location.pathname,location.hash])
+
   return (
     <>
-      <IconButton aria-label="open menu" className='menu-button' onClick={() => setIsOpen(true)}>
+      <IconButton aria-label="open menu" className='menu-button'
+        onClick={() => setIsOpen(true)}>
         <Icon>menu_rounded_icon</Icon>
       </IconButton>
       <DrawerNavStyled

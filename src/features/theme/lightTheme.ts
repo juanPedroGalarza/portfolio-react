@@ -9,7 +9,7 @@ const theme: Theme = createTheme({
       light: "#33877c"
     },
     background: {
-      paper: blueGrey[50]
+      paper: blueGrey[100]
     }
   }
 })

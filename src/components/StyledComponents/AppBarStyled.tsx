@@ -1,26 +1,36 @@
 import { AppBar, styled } from "@mui/material";
 
 interface MyProps {
-  istop: "true" | "false"
+  istop: {v:boolean}
 }
 
 const AppBarStyled = styled(AppBar)<MyProps>(({ theme, istop }) => ({
-  justifyContent: "space-around",
-  flexFlow: "row wrap-reverse",
+  justifyContent: "space-between",
+  flexFlow: "row wrap",
   alignItems: "center",
   position: "sticky",
   top: 0,
   minHeight: "15vh",
-  boxShadow: istop==="true"? "none":null,
-  transition: "all 20ms",
+  boxShadow: istop.v&& "none",
+  transition: "all .5s ease",
   "& .menu-button": {
     display: "none"
   },
-  "& .tool-bar": {
-    gap: "0.2rem"
+  "& > .MuiToolbar-root": {
+    gap: "0.2rem",
+    alignItems: "center",
+    "& > .MuiButtonGroup-root": {
+      justifySelf: "flex-start"
+    },
+  },
+  "& > .MuiTypography-root": {
+    flexGrow: 1,
+    fontFamily: "'Work Sans'",
+    color: theme.palette.background.paper,
+    textShadow: `-1px 1px 2px ${theme.palette.text.primary}`,
   },
   "@media (max-width: 768px)": {
-    "& .tool-bar": {
+    "& .MuiToolbar-root": {
       display: "none"
     },
     "& .menu-button": {

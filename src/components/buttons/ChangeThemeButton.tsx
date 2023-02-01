@@ -21,7 +21,7 @@ export default function ChangeThemeButton({isFor}:{isFor?:string}) {
           dense
         >
           <ListItemIcon>
-            <Icon color="primary"
+            <Icon color="success"
             >{themeName === "dark" ?
               "dark_mode_rounded_icon" :
               "light_mode_rounded_icon"}</Icon>
@@ -35,9 +35,9 @@ export default function ChangeThemeButton({isFor}:{isFor?:string}) {
   }
   return (
     <IconButton aria-label="change theme"
-      color="primary"
+      color="warning"
       onClick={turnTheme}>
-      <Icon color="primary"
+      <Icon color="warning"
       >{themeName === "dark" ?
         "dark_mode_rounded_icon" :
         "light_mode_rounded_icon"}</Icon>

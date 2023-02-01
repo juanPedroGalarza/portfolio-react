@@ -1,4 +1,4 @@
-import { teal, blueGrey } from '@mui/material/colors';
+import { teal, grey } from '@mui/material/colors';
 import { createTheme, Theme } from '@mui/material/styles';
 
 const theme: Theme = createTheme({
@@ -10,7 +10,7 @@ const theme: Theme = createTheme({
       light: "#33ab9f"
     },
     background: {
-      paper: blueGrey[800]
+      paper: grey[900]
     }
   },
 });

@@ -1,11 +1,9 @@
 import { useLocation, useNavigate } from "react-router-dom"
-import Button from "@mui/material/Button"
-import Typography from "@mui/material/Typography"
 import ChangeThemeButton from "./buttons/ChangeThemeButton"
 import AppBarStyled from './StyledComponents/AppBarStyled'
-import Toolbar from '@mui/material/Toolbar'
 import DrawerNav from "./DrawerNav"
 import React from "react"
+import { ButtonGroup, Button, Typography, Toolbar } from "@mui/material"
 
 export interface LinkForButton {
     name: string,
@@ -13,9 +11,9 @@ export interface LinkForButton {
 }
 
 export default function Nav() {
-    const [isTop, setIsTop] = React.useState<"true"|"false">("true")
+    const [isTop, setIsTop] = React.useState<boolean>(true)
     function handleScroll():void {
-        window.scrollY > 0 ? setIsTop("false"):setIsTop("true")
+        window.scrollY > 0 ? setIsTop(false):setIsTop(true)
     }
     React.useEffect(() => {
         window.addEventListener("scroll",handleScroll)
@@ -37,8 +35,8 @@ export default function Nav() {
         }
         return (
             <Button
-                variant="contained"
-                color="primary"
+                variant="text"
+                color="warning"
                 disabled={active}
                 onClick={() => {navigate(l.to)}}
                 key={l.name}
@@ -52,17 +50,22 @@ export default function Nav() {
     return (
         <AppBarStyled
             position="sticky"
-            color={isTop==="true" ? "transparent" : "default"}
-            istop={isTop}
+            color={isTop ? "transparent" : "default"}
+            istop={{ v: isTop }}
         >
             <DrawerNav list={links} />
-            <Typography variant="subtitle1">
-                Juan Pedro Galarza
-            </Typography>
-            <Toolbar className="tool-bar">
-                {links.map(printList)}
+            <Toolbar>
+                <ButtonGroup variant="contained" color="warning">
+                    {links.map(printList)}
+                </ButtonGroup>
                 <ChangeThemeButton />
             </Toolbar>
+            {isTop ?
+                null
+                : <Typography variant="h5" align="center">
+                    Juan Pedro Galarza
+                </Typography>
+            }
         </AppBarStyled>
     )
 }

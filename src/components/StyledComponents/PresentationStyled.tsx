@@ -21,8 +21,8 @@ const PresentationStyled = styled(Grid)(({ theme }) => ({
     textShadow: `-3px 2px 2px ${theme.palette.text.secondary}`
   },
   "& 	.MuiTypography-h3": {
-    color: theme.palette.secondary.main,
-    textShadow: `-2px 1px ${theme.palette.text.secondary}`
+    color: theme.palette.background.paper,
+    textShadow: `-2px 1px 3px ${theme.palette.text.secondary}`
   },
   "& .MuiTypography-subtitle1": {
     fontFamily: "'Work Sans'"

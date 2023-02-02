@@ -3,7 +3,7 @@ import ChangeThemeButton from "./buttons/ChangeThemeButton"
 import AppBarStyled from './StyledComponents/AppBarStyled'
 import DrawerNav from "./DrawerNav"
 import React from "react"
-import { ButtonGroup, Button, Typography, Toolbar } from "@mui/material"
+import { ButtonGroup, Button, Typography, Toolbar, Container } from "@mui/material"
 
 export interface LinkForButton {
     name: string,
@@ -22,9 +22,10 @@ export default function Nav() {
     const location = useLocation()
     const navigate = useNavigate()
     const links: LinkForButton[] = [
-        {to:"/",name:"Home"},
-        {to:"/proyects",name:"Proyects"},
-        {to:"/#contact",name:"Contact"}
+        { to: "/", name: "Home" },
+        { to: "/proyects", name: "Proyects" },
+        { to: "/#contact", name: "Contact" },
+        { to: "/#about", name: "About" },
     ]
     function printList(l:LinkForButton) {
         let active = false
@@ -54,6 +55,7 @@ export default function Nav() {
             istop={{ v: isTop }}
         >
             <DrawerNav list={links} />
+            <Container maxWidth="xl">
             <Toolbar>
                 <ButtonGroup variant="contained" color="warning">
                     {links.map(printList)}
@@ -66,6 +68,7 @@ export default function Nav() {
                     Juan Pedro Galarza
                 </Typography>
             }
+            </Container>
         </AppBarStyled>
     )
 }

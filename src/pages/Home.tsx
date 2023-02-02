@@ -13,8 +13,8 @@ export default function Home() {
         <MainStyled>
             <Suspense fallback={<Loading />}>
                 <Presentation />
-                <Technologies />
                 <About />
+                <Technologies />
                 <Contact />
             </Suspense>
         </MainStyled>

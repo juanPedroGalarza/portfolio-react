@@ -72,7 +72,7 @@ export default function Contact() {
     <Box sx={{
       display: "flex",
       justifyContent: "center",
-      alignItems: "stretch",
+      alignItems: "center",
       flexDirection: "column"
     }}>
       <Typography variant="h4" paragraph>Contact me</Typography>

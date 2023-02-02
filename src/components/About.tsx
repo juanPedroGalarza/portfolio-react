@@ -33,6 +33,18 @@ export default function About() {
             of a real work environment from Learn by Doing.
           </Typography>
         </Grid>
+        <Grid
+          item
+          sm={12}
+          className="about-col"
+        >
+          <Typography variant="body1">
+            During my course I had several opportunities in which I had to work as a team,
+            thanks to this I realized that I have a facility to integrate and apply knowledge
+            recently purchased. I decided to use it in favor of my team and give a hand to my teammates,
+            assuming tasks of greater responsibility.
+          </Typography>
+        </Grid>
       </Grid>
     </AboutStyled>
   )

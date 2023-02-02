@@ -20,7 +20,7 @@ const ProyectImageCard: React.FC<PropsInterface> = ({image, title}) => {
         variant="h4"
         align="center"
         paragraph>
-        {title}
+        {title.split("-").join(" ")}
       </Typography>
     </ProyectImageStyled>
   )

@@ -76,7 +76,7 @@ export default function Technologies() {
 
   function printTech(tech:TechItem) {
     return (
-      <Grid item xs={12} sm={10} md={8} lg={6}>
+      <Grid item xs={12} sm={5} md={8} lg={6}>
         <Box>
         <img src={tech.image} alt={tech.name} className="image-tech" />
           <Typography variant="h5" align="center">{tech.name}</Typography>
@@ -86,7 +86,7 @@ export default function Technologies() {
   }
   function printTechList(techList: TechList) {
     return (
-      <Grid item sm={12} md={6} lg={5}>
+      <Grid item sm={12} md={4} lg={5} xl={4}>
         <Box>
           <Typography variant="h4" paragraph>{techList.category}</Typography>
           <Grid container spacing={3}>
@@ -98,7 +98,7 @@ export default function Technologies() {
   }
 
   return (
-    <TechnologiesStyled container spacing={4} themeName={themeName}>
+    <TechnologiesStyled container spacing={5} themeName={themeName}>
       <Typography variant="h4" align="center">Technologies</Typography>
       {techData.map(printTechList)}
     </TechnologiesStyled>

@@ -16,47 +16,51 @@ const TechnologiesStyled = styled(Grid)<moreProps>(({ theme, themeName }) => ({
     boxShadow: `1px 1px 8px ${alpha(theme.palette.background.paper, .37)}`,
     borderRadius: 3,
     padding: "2rem",
-    "& > .MuiGrid-container > .MuiGrid-item": {
-      justifyContent: "center",
-      alignItems: "center",
-      display: "flex",
-      "& > .MuiBox-root": {
-        width: 100,
-        height: 100,
-        backgorundColor: "transparent",
-        display: "flex",
+    "& > .MuiGrid-container": {
         justifyContent: "center",
         alignItems: "center",
-        position: "relative",
-        transition: "all 500ms ease",
-        "& > .image-tech": {
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          filter: themeName === "dark"?"invert(100%)":null
-        },
-        "& > .MuiTypography-h5": {
-          height: "100%",
-          width: "100%",
-          display: "none",
-          position: "absolute",
-          top: 0,
-          left: 0,
-          alignItems: "center",
+      " > .MuiGrid-item": {
+        justifyContent: "center",
+        alignItems: "center",
+        display: "flex",
+        "& > .MuiBox-root": {
+          width: 100,
+          height: 100,
+          backgorundColor: "transparent",
+          display: "flex",
           justifyContent: "center",
-          color: theme.palette.background.default,
-          textShadow: `1px 1px 5px ${theme.palette.text.primary}`,
-          fontFamily: "'Teko'",
-        },
-        "&:hover": {
-          backgroundColor: alpha(theme.palette.background.paper, .37),
-          padding: ".5rem",
-          "& > .MuiTypography-h5": {
-            display: "flex"
+          alignItems: "center",
+          position: "relative",
+          transition: "all 500ms ease",
+          "& > .image-tech": {
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            filter: themeName === "dark" ? "invert(100%)" : null
           },
-        }
+          "& > .MuiTypography-h5": {
+            height: "100%",
+            width: "100%",
+            display: "none",
+            position: "absolute",
+            top: 0,
+            left: 0,
+            alignItems: "center",
+            justifyContent: "center",
+            color: theme.palette.background.default,
+            textShadow: `1px 1px 5px ${theme.palette.text.primary}`,
+            fontFamily: "'Teko'",
+          },
+          "&:hover": {
+            backgroundColor: alpha(theme.palette.background.paper, .37),
+            padding: ".5rem",
+            "& > .MuiTypography-h5": {
+              display: "flex"
+            },
+          }
+        },
       },
-    },
+    }
   },
 }))
 

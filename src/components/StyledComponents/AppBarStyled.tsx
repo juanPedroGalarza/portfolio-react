@@ -10,6 +10,8 @@ const AppBarStyled = styled(AppBar)<MyProps>(({ theme, istop }) => ({
   minHeight: "15vh",
   boxShadow: istop.v&& "none",
   transition: "all .5s ease",
+  justifyContnt: "center",
+  alignItems: "center",
   "& .menu-button": {
     display: "none"
   },
@@ -38,7 +40,7 @@ const AppBarStyled = styled(AppBar)<MyProps>(({ theme, istop }) => ({
       display: "none"
     },
     "& .menu-button": {
-      display: "block"
+      display: "inline"
     },
     "& > .MuiContainer-root": {
       minHeight: "10vh"

@@ -1,14 +1,14 @@
-import { AppBar, styled } from "@mui/material";
+import { AppBar, styled, alpha } from "@mui/material";
 
 interface MyProps {
   istop: {v:boolean}
-}
+};
 
 const AppBarStyled = styled(AppBar)<MyProps>(({ theme, istop }) => ({
   position: "sticky",
   top: 0,
   minHeight: "15vh",
-  boxShadow: istop.v&& "none",
+  boxShadow: istop.v && "none",
   transition: "all .5s ease",
   justifyContnt: "center",
   alignItems: "center",
@@ -31,11 +31,12 @@ const AppBarStyled = styled(AppBar)<MyProps>(({ theme, istop }) => ({
     "& > .MuiTypography-root": {
       flexGrow: 1,
       fontFamily: "'Work Sans'",
-      color: theme.palette.background.paper,
-      textShadow: `-1px 1px 2px ${theme.palette.text.primary}`,
+      color: alpha(theme.palette.warning.main, .77),
+      textShadow: `-1px 1px 2px ${theme.palette.background.default}`,
     },
   },
   "@media (max-width: 768px)": {
+    minHeight: 0,
     "& .MuiToolbar-root": {
       display: "none"
     },
@@ -43,8 +44,9 @@ const AppBarStyled = styled(AppBar)<MyProps>(({ theme, istop }) => ({
       display: "inline"
     },
     "& > .MuiContainer-root": {
-      minHeight: "10vh"
+      minHeight: "5vh",
+      display: istop.v ? "none" : "flex",
     }
   },
-}))
-export default AppBarStyled
+}));
+export default AppBarStyled;

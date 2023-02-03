@@ -9,12 +9,11 @@ import React from 'react';
 import { Icon } from '@mui/material';
 import { UrlNamed } from '../../features/proyects/proyectsData';
 
-interface MyProps {
-  options: Array<UrlNamed>,
-  nameList: string
+interface MyProps extends React.PropsWithChildren{
+  options: Array<UrlNamed>
 };
 
-export default function SplitButtonHref({ options, nameList }:MyProps):JSX.Element {
+export default function SplitButtonHref({ options, children }:MyProps):JSX.Element {
 
   const [open, setOpen] = React.useState<boolean>(false);
   const anchorRef = React.useRef(null);
@@ -36,7 +35,6 @@ export default function SplitButtonHref({ options, nameList }:MyProps):JSX.Eleme
     <>
       <Button
         size="small"
-        aria-controls={open ? `split-button-menu-${nameList}` : undefined}
         aria-expanded={open ? 'true' : undefined}
         aria-label="select merge strategy"
         aria-haspopup="menu"
@@ -44,8 +42,9 @@ export default function SplitButtonHref({ options, nameList }:MyProps):JSX.Eleme
         endIcon={<Icon>arrow_drop_down_icon</Icon>}
         ref={anchorRef}
         variant="contained"
+        sx={{textTransform:"none"}}
       >
-        {nameList}
+        {children}
       </Button>
       <Popper
         sx={{
@@ -67,7 +66,7 @@ export default function SplitButtonHref({ options, nameList }:MyProps):JSX.Eleme
           >
             <Paper>
               <ClickAwayListener onClickAway={handleClose}>
-                <MenuList id={`split-button-menu-${nameList}`} autoFocusItem>
+                <MenuList autoFocusItem>
                   {options.map((option, index) => (
                     <MenuItem
                       key={index}

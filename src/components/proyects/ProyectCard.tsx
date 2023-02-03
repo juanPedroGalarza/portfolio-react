@@ -48,8 +48,8 @@ export default function ProyectCard({data}:MyProps) {
           onClick={toggleMoreInfo}
         >{showMoreInfo?"Hide":"More"} Info
         </Button>
-        <SplitButtonHref options={repositories} nameList={"repositories"} />
-        <SplitButtonHref options={urls} nameList={"urls"} />
+        <SplitButtonHref options={repositories}>Repostitories</SplitButtonHref>
+        <SplitButtonHref options={urls}>Sites</SplitButtonHref>
       </CardActions>
     </ProyectCardStyled>
   )

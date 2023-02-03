@@ -79,10 +79,9 @@ export default function Contact(): JSX.Element {
       justifyContent: "center",
       alignItems: "center",
       flexDirection: "column"
-    }}>
+    }} id="contact">
       <Typography variant="h4" paragraph>Contact me</Typography>
       <ContactStyled
-        id="contact"
         action="https://getform.io/f/80033bce-5a64-4bc0-9ddc-4eb995407b9f"
         method="post"
       >

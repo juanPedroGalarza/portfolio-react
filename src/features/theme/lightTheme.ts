@@ -11,6 +11,9 @@ const theme: Theme = createTheme({
     background: {
       paper: blueGrey[100]
     }
-  }
+  },
+  typography: {
+    fontFamily: "Poppins,Roboto,Helvetica,Arial"
+  },
 })
 export default theme

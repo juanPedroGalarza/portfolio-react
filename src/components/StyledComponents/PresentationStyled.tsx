@@ -17,15 +17,22 @@ const PresentationStyled = styled(Grid)(({ theme }) => ({
   },
   "& .MuiTypography-h1": { 
     fontFamily: "'Teko'",
-    color: theme.palette.primary.main,
+    color: theme.palette.warning.main,
     textShadow: `-3px 2px 2px ${theme.palette.text.secondary}`
   },
   "& 	.MuiTypography-h3": {
-    color: theme.palette.background.paper,
-    textShadow: `-2px 1px 3px ${theme.palette.text.secondary}`
+    fontFamily: "'Work Sans'",
+    textShadow: `-2px 1px ${theme.palette.text.secondary}`
   },
   "& .MuiTypography-subtitle1": {
-    fontFamily: "'Work Sans'"
+    fontFamily: "'Roboto'"
+  },
+  "& .MuiBox-root": {
+    width: "100%",
+    display: "flex",
+    justifyContent: "space-evenly",
+    alignItems: "center",
+    flexWrap: "wrap"
   }
 }))
 

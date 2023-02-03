@@ -2,17 +2,18 @@ import { Grid, Box, Typography } from "@mui/material";
 import React from "react";
 import { useSelector } from "react-redux";
 import { StoreInterface } from "../features/store";
+import { ThemeState } from "../features/theme/themeSlice";
 import TechnologiesStyled from "./StyledComponents/TechnologiesStyled";
 
 interface TechItem {
   name: string,
   image: string
-}
+};
 
 interface TechList {
   category: string,
   techs: Array<TechItem>
-}
+};
 
 const techData: Array<TechList> = [
   {
@@ -65,28 +66,28 @@ const techData: Array<TechList> = [
       },
     ]
   },
-]
+];
 
 
 
 
 
-export default function Technologies() {
-  const {themeName} = useSelector((state:StoreInterface)=>state.theme)
+export default function Technologies(): JSX.Element {
+  const { themeName } = useSelector((state: StoreInterface):ThemeState => state.theme);
 
-  function printTech(tech:TechItem) {
+  function printTech(tech:TechItem): JSX.Element {
     return (
-      <Grid item xs={12} sm={5} md={8} lg={6}>
+      <Grid item xs={12} sm={5} md={8} lg={6} key={tech.name}>
         <Box>
-        <img src={tech.image} alt={tech.name} className="image-tech" />
+          <img src={tech.image} alt={tech.name} className="image-tech" />
           <Typography variant="h5" align="center">{tech.name}</Typography>
         </Box>
       </Grid>
-    )
-  }
-  function printTechList(techList: TechList) {
+    );
+  };
+  function printTechList(techList: TechList): JSX.Element {
     return (
-      <Grid item sm={12} md={4} lg={5} xl={4}>
+      <Grid item sm={12} md={4} lg={5} xl={4} key={techList.category}>
         <Box>
           <Typography variant="h4" paragraph>{techList.category}</Typography>
           <Grid container spacing={3}>
@@ -94,13 +95,13 @@ export default function Technologies() {
           </Grid>
         </Box>
       </Grid>
-    )
-  }
+    );
+  };
 
   return (
-    <TechnologiesStyled container spacing={5} themeName={themeName}>
+    <TechnologiesStyled container spacing={5} themename={themeName}>
       <Typography variant="h4" align="center">Technologies</Typography>
       {techData.map(printTechList)}
     </TechnologiesStyled>
-  )
-}
+  );
+};

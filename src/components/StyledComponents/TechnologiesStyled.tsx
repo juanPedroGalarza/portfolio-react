@@ -1,10 +1,10 @@
 import { Grid, styled, alpha } from "@mui/material";
 
 interface moreProps {
-  themeName?: string
-}
+  themename?: string
+};
 
-const TechnologiesStyled = styled(Grid)<moreProps>(({ theme, themeName }) => ({
+const TechnologiesStyled = styled(Grid)<moreProps>(({ theme, themename }) => ({
   width: "90%",
   justifyContent: "space-between",
   justifyItems: "center",
@@ -17,51 +17,47 @@ const TechnologiesStyled = styled(Grid)<moreProps>(({ theme, themeName }) => ({
     borderRadius: 3,
     padding: "2rem",
     "& > .MuiGrid-container": {
-        justifyContent: "center",
-        alignItems: "center",
+      justifyContent: "center",
+      alignItems: "center",
       " > .MuiGrid-item": {
         justifyContent: "center",
         alignItems: "center",
         display: "flex",
         "& > .MuiBox-root": {
           width: 100,
-          height: 100,
+          height: 150,
           backgorundColor: "transparent",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          flexDirection: "column",
           position: "relative",
           transition: "all 500ms ease",
+          padding: ".2rem",
           "& > .image-tech": {
             width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            filter: themeName === "dark" ? "invert(100%)" : null
+            objectFit: "contain",
+            filter: themename === "dark" ? "invert(100%)" : null,
+            transition: "all 500ms ease",
           },
           "& > .MuiTypography-h5": {
-            height: "100%",
-            width: "100%",
-            display: "none",
-            position: "absolute",
-            top: 0,
-            left: 0,
             alignItems: "center",
             justifyContent: "center",
-            color: theme.palette.background.default,
-            textShadow: `1px 1px 5px ${theme.palette.text.primary}`,
+            color: theme.palette.text.primary,
+            textShadow: `1px 1px ${theme.palette.background.default}`,
             fontFamily: "'Teko'",
           },
           "&:hover": {
-            backgroundColor: alpha(theme.palette.background.paper, .37),
-            padding: ".5rem",
-            "& > .MuiTypography-h5": {
-              display: "flex"
+            backgroundColor: alpha(theme.palette.text.secondary, .17),
+            borderRadius: 4,
+            "& .image-tech": {
+              transform: `scale(.85)`,
             },
           }
         },
       },
     }
   },
-}))
+}));
 
-export default TechnologiesStyled
+export default TechnologiesStyled;

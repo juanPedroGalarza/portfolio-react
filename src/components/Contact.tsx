@@ -1,29 +1,30 @@
-import { Box, Button, Grid, TextField, Typography } from "@mui/material"
-import React from "react"
-import { useSelector } from "react-redux"
-import { StoreInterface } from "../features/store"
-import ContactStyled from "./StyledComponents/ContactStyled"
+import { Box, Button, Grid, TextField, Typography } from "@mui/material";
+import React from "react";
+import { useSelector } from "react-redux";
+import { StoreInterface } from "../features/store";
+import { ThemeState } from "../features/theme/themeSlice";
+import ContactStyled from "./StyledComponents/ContactStyled";
 
 interface NetworkItem {
   name: string,
   image: string,
   href: string,
   sub: string
-}
+};
 
-export default function Contact() {
-  const {themeName} = useSelector((state:StoreInterface)=>state.theme)
+export default function Contact(): JSX.Element {
+  const { themeName } = useSelector((state: StoreInterface):ThemeState => state.theme);
 
-  function printNetwork(item:NetworkItem) {
+  function printNetwork(item:NetworkItem): JSX.Element {
     return (
-      <Grid item xs={12} sm={6}>
+      <Grid item xs={12} sm={6} key={item.name}>
         <Box sx={{
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center"
         }}>
-          <Typography>{item.name}</Typography>
+          <Typography color="secondary">{item.name}</Typography>
           <Button
             startIcon={<img src={item.image} alt={item.name}
               style={{
@@ -31,14 +32,18 @@ export default function Contact() {
                 filter: themeName === "dark" ? "invert(100%)" : null
               }} />}
             href={item.href}
-            color="secondary"
+            color="inherit"
+            variant="text"
+            sx={{ textTransform: "none" }}
           >
-          {item.sub}
+            <Typography>
+              {item.sub}
+            </Typography>
           </Button>
         </Box>
       </Grid>
-    )
-  }
+    );
+  };
 
   const listNetwork: Array<NetworkItem> = [
     {
@@ -65,7 +70,7 @@ export default function Contact() {
       href: "mailto:juanpg232@gmail.com",
       sub: "juanpg232@gmail.com"
     },
-  ]
+  ];
 
 
   return (
@@ -120,11 +125,11 @@ export default function Contact() {
       </ContactStyled>
       <Grid container spacing={5} wrap="wrap"
         sx={{
-        marginTop: "5rem",
-        marginBottom: "5rem"
-      }}>
+          marginTop: "5rem",
+          marginBottom: "5rem"
+        }}>
         {listNetwork.map(printNetwork)}
       </Grid>
     </Box>
-  )
-}
+  );
+};

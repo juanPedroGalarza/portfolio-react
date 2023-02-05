@@ -1,4 +1,4 @@
-import { Button, CardActionArea, CardActions, CardContent, Typography } from "@mui/material";
+import { Button, CardActionArea, CardActions, CardContent, Icon, Typography } from "@mui/material";
 import React from "react";
 import { Proyect } from "../../features/proyects/proyectsData";
 import SplitButtonHref from "../buttons/SplitButtonHref";
@@ -49,7 +49,13 @@ export default function ProyectCard({data}:MyProps):JSX.Element {
           variant="contained"
           size="small"
           onClick={toggleMoreInfo}
-        >{showMoreInfo ? "Hide" : "More"} Info
+          sx={{
+            color: "#fff",
+            textTransform: "none"
+          }}
+          endIcon={<Icon>{showMoreInfo ? "arrow_drop_up_icon" : "arrow_drop_down_icon"}</Icon>}
+        >
+          Info
         </Button>
         <SplitButtonHref options={repositories}>Repostitories</SplitButtonHref>
         {urls ? <SplitButtonHref options={urls}>Sites</SplitButtonHref> : null}

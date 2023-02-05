@@ -39,10 +39,10 @@ export default function SplitButtonHref({ options, children }:MyProps):JSX.Eleme
         aria-label="select merge strategy"
         aria-haspopup="menu"
         onClick={handleToggle}
-        endIcon={<Icon>arrow_drop_down_icon</Icon>}
+        endIcon={<Icon>{open ? "arrow_drop_up_icon" : "arrow_drop_down_icon"}</Icon>}
         ref={anchorRef}
         variant="contained"
-        sx={{textTransform:"none"}}
+        sx={{ textTransform: "none" }}
       >
         {children}
       </Button>

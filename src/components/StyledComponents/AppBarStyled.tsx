@@ -11,9 +11,10 @@ const AppBarStyled = styled(AppBar)<MyProps>(({ theme, istop }) => ({
   boxShadow: istop.v && "none",
   transition: "all .5s ease",
   justifyContnt: "center",
-  alignItems: "center",
+  alignItems: "flex-start",
   "& .menu-button": {
-    display: "none"
+    display: "none",
+    paddingLeft: "1.5rem"
   },
   "& > .MuiContainer-root": {
     display: "flex",
@@ -31,8 +32,7 @@ const AppBarStyled = styled(AppBar)<MyProps>(({ theme, istop }) => ({
     "& > .MuiTypography-root": {
       flexGrow: 1,
       fontFamily: "'Work Sans'",
-      color: alpha(theme.palette.warning.main, .77),
-      textShadow: `-1px 1px 2px ${theme.palette.background.default}`,
+      color: alpha(theme.palette.warning.main, .87),
     },
   },
   "@media (max-width: 768px)": {
@@ -46,7 +46,10 @@ const AppBarStyled = styled(AppBar)<MyProps>(({ theme, istop }) => ({
     "& > .MuiContainer-root": {
       minHeight: "5vh",
       display: istop.v ? "none" : "flex",
-    }
+      "& > .MuiTypography-root": {
+        paddingBottom: "1rem"
+      }
+    },
   },
 }));
 export default AppBarStyled;

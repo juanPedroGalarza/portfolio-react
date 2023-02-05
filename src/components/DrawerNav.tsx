@@ -53,9 +53,9 @@ export default function DrawerNav({ list }: MyProps):JSX.Element {
 
   return (
     <>
-      <IconButton aria-label="open menu" className='menu-button'
+      <IconButton aria-label="open menu" className='menu-button' size='large' disableTouchRipple
         onClick={() => setIsOpen(true)}>
-        <Icon>menu_rounded_icon</Icon>
+        <Icon fontSize='inherit'>menu_rounded_icon</Icon>
       </IconButton>
       <DrawerNavStyled
         anchor="left"

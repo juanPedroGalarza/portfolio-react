@@ -16,16 +16,9 @@ export default function ChangeThemeButton({ isFor }: { isFor?: string })
   const dispatch = useDispatch();
   const { themeName }: ThemeState = useSelector((state: StoreInterface)
     : ThemeState => state.theme);
-  const [theme, setTheme]:
-    [string, React.Dispatch<React.SetStateAction<string>>]
-    = React.useState<string>(themeName);
-
-  React.useEffect(():void => {
-    dispatch(changeTheme(theme));
-  }, [theme]);
 
   const turnTheme:VoidFunction = ():void => {
-    themeName === "dark" ? setTheme("light") : setTheme("dark");
+    dispatch(changeTheme(themeName === "dark"?"light":"dark"));
   };
 
   if (isFor === "List") {

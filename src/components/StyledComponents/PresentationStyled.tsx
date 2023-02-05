@@ -15,14 +15,12 @@ const PresentationStyled = styled(Grid)(({ theme }) => ({
   "& > .subtitle-presentation": {
     alignItems: "flex-end"
   },
-  "& .MuiTypography-h1": { 
+  "& .MuiTypography-h1": {
     fontFamily: "'Teko'",
-    color: theme.palette.warning.main,
-    textShadow: `-3px 2px 2px ${theme.palette.text.secondary}`
+    color: theme.palette.warning.main
   },
   "& 	.MuiTypography-h3": {
-    fontFamily: "'Work Sans'",
-    textShadow: `-2px 1px ${theme.palette.text.secondary}`
+    fontFamily: "'Work Sans'"
   },
   "& .MuiTypography-subtitle1": {
     fontFamily: "'Roboto'"
@@ -34,6 +32,6 @@ const PresentationStyled = styled(Grid)(({ theme }) => ({
     alignItems: "center",
     flexWrap: "wrap"
   }
-}))
+}));
 
-export default PresentationStyled
+export default PresentationStyled;

@@ -8,19 +8,22 @@ import ProyectImageCard from "./ProyectImageCard";
 
 interface MyProps {
   data: Proyect
-}
+};
 
-export default function ProyectCard({data}:MyProps) {
-  const { 
+export default function ProyectCard({data}:MyProps):JSX.Element {
+  const {
     picture,
-    name, 
+    name,
     description,
     repositories,
     urls
-  }: Proyect = data
+  }: Proyect = data;
 
-  const [showMoreInfo, setShowMoreInfo] = React.useState<boolean>(false)
-  const toggleMoreInfo = ():void => setShowMoreInfo((v:boolean):boolean => !v)
+  const [showMoreInfo, setShowMoreInfo]:
+    [boolean, React.Dispatch<React.SetStateAction<boolean>>]
+    = React.useState<boolean>(false);
+  const toggleMoreInfo: VoidFunction
+    = (): void => setShowMoreInfo((v: boolean): boolean => !v);
 
   return (
     <ProyectCardStyled
@@ -34,7 +37,7 @@ export default function ProyectCard({data}:MyProps) {
           <CardContent>
             <Typography>{description}</Typography>
           </CardContent>
-          : 
+          :
           <ProyectImageCard image={picture} title={name} />
         }
         <OneBar bcgcolor="primary" height="3" className="card-bar" />
@@ -46,11 +49,11 @@ export default function ProyectCard({data}:MyProps) {
           variant="contained"
           size="small"
           onClick={toggleMoreInfo}
-        >{showMoreInfo?"Hide":"More"} Info
+        >{showMoreInfo ? "Hide" : "More"} Info
         </Button>
         <SplitButtonHref options={repositories}>Repostitories</SplitButtonHref>
-        <SplitButtonHref options={urls}>Sites</SplitButtonHref>
+        {urls ? <SplitButtonHref options={urls}>Sites</SplitButtonHref> : null}
       </CardActions>
     </ProyectCardStyled>
-  )
-}
+  );
+};

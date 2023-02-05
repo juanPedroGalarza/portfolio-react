@@ -8,6 +8,7 @@ const MainStyled = styled(Container)(({ theme }) => ({
   alignItems: "center",
   justifyContent: "center",
   gap: "6rem",
+  paddingBottom: "6rem",
 }))
 export default function Main(props:ContainerProps) {
   return (

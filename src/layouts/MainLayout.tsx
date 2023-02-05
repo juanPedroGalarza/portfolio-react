@@ -6,7 +6,7 @@ const ScrollFromPath = React.lazy(() => import("../components/ScrollFromPath"))
 
 const MainLayout: React.FC<{children:React.ReactNode}> = (props) => {
     return (
-        <React.Suspense fallback={<Loading />}>
+        <React.Suspense fallback={<Loading sx={{minHeight:"100vh"}}/>}>
             <MainLayoutBody>
                 <NavBar />
                 {props.children}

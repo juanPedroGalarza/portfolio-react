@@ -1,14 +1,14 @@
 import React from "react"
 import { lazy, Suspense } from "react"
-import About from "../components/About"
 import Loading from "../components/Loading"
-import Presentation from "../components/Presentation"
 import MainStyled from "../components/StyledComponents/MainStyled"
-import Technologies from "../components/Technologies"
 
 const Contact = lazy(()=>import("../components/Contact"))
+const Presentation = lazy(()=>import("../components/Presentation"))
+const Technologies = lazy(()=>import("../components/Technologies"))
+const About = lazy(()=>import("../components/About"))
 
-export default function Home() {
+export default function Home():JSX.Element {
     return (
         <MainStyled>
             <Suspense fallback={<Loading />}>
@@ -18,5 +18,5 @@ export default function Home() {
                 <Contact />
             </Suspense>
         </MainStyled>
-    )
-}
+    );
+};

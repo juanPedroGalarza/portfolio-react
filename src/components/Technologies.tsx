@@ -3,7 +3,9 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { StoreInterface } from "../features/store";
 import { ThemeState } from "../features/theme/themeSlice";
-import TechnologiesStyled from "./StyledComponents/TechnologiesStyled";
+import Loading from "./Loading";
+
+const TechnologiesStyled = React.lazy(()=>import("./StyledComponents/TechnologiesStyled"))
 
 interface TechItem {
   name: string,
@@ -103,9 +105,11 @@ export default function Technologies(): JSX.Element {
   };
 
   return (
-    <TechnologiesStyled container spacing={5} themename={themeName}>
-      <Typography variant="h4" align="center">Technologies</Typography>
-      {techData.map(printTechList)}
-    </TechnologiesStyled>
+    <React.Suspense fallback={<Loading />}>
+      <TechnologiesStyled container spacing={5} themename={themeName}>
+        <Typography variant="h4" align="center">Technologies</Typography>
+        {techData.map(printTechList)}
+      </TechnologiesStyled>
+    </React.Suspense>
   );
 };

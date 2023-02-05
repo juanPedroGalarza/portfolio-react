@@ -25,7 +25,7 @@ function App() {
 
   const {themeName} = useSelector((state:StoreInterface)=>state.theme)
   return (
-    <Suspense fallback={<Loading />}>
+    <Suspense fallback={<Loading sx={{minHeight:"100vh"}}/>}>
       <ThemeProvider theme={themes[themeName]}>
         <BrowserRouter>
           <MainLayout >

@@ -7,7 +7,7 @@ const ProviderStore = lazy(()=>import('./ProviderStore'))
 const App = lazy(()=>import('./App'))
 
 ReactDOM.createRoot(document.querySelector('#root')).render(
-  <Suspense fallback={<Loading />}>
+  <Suspense fallback={<Loading sx={{minHeight:"100vh"}} />}>
     <ProviderStore>
       <App />
     </ProviderStore>

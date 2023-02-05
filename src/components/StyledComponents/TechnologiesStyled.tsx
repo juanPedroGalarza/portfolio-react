@@ -44,7 +44,6 @@ const TechnologiesStyled = styled(Grid)<moreProps>(({ theme, themename }) => ({
             alignItems: "center",
             justifyContent: "center",
             color: theme.palette.text.primary,
-            textShadow: `1px 1px ${theme.palette.background.default}`,
             fontFamily: "'Teko'",
           },
           "&:hover": {

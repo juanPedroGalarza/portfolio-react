@@ -47,6 +47,10 @@ const techData: Array<TechList> = [
         name: "Redux & Toolkit",
         image: "https://i.postimg.cc/J4gsXCzR/logo-redux.png"
       },
+      {
+        name: "Material ui",
+        image: "https://i.postimg.cc/NjZDLBCf/logo-material-ui.png"
+      },
     ]
   },
   {

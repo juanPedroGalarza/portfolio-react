@@ -6,7 +6,7 @@ export interface UrlNamed {
 export interface Proyect {
   name: string,
   picture?: string,
-  description: string,
+  description: string | string[],
   repositories: Array<UrlNamed>,
   urls?: Array<UrlNamed>
 };
@@ -14,17 +14,25 @@ export interface Proyect {
 
 const proyects: Array<Proyect> = [
   {
-    name: "MyTineraries",
-    picture: "https://i.postimg.cc/76Yfv0Wx/My-Tineraries.png",
-    description: "First project with React in the MindHub bootcamp, where I collaborated with a partner to create an application without the use of extra libraries.",
+    name: "Portfolio",
+    description: ["My Portfolio made with React, TypeScript, Redux Toolkit & Material ui."," Here is also a list of my projects, this is updated every time I finish one"],
+    picture: "https://i.postimg.cc/xCWRS82S/Portfolio.png",
     repositories: [
-      { name: "Front", url: "https://github.com/juanPedroGalarza/mytinerary-juandream" },
-      { name: "Back", url: "https://github.com/IbanezAndrea/mytinerary-back-juandream" },
-      { name: "Native", url: "https://github.com/IbanezAndrea/myTinerary-juandream-mobile" }
+      { name: "Repository", url: "https://github.com/juanPedroGalarza/portfolio-react" }
     ],
     urls: [
-      { name: "Web page", url: "https://my-tinerary-juandream.web.app" },
-      { name: "Backend server", url: "https://my-tinerary-back-juandream.onrender.com" },
+      { name: "Web Site", url: "https://juan-pedro-galarza.web.app/" }
+    ],
+  },
+  {
+    name: "Rituals-Game",
+    picture: "https://i.postimg.cc/y8gkzYX9/rituals.png",
+    description: "An interactive text adventure with a deep story, the web is made with React & Redux-Toolkit.",
+    repositories: [
+      { name: "Repository", url: "https://github.com/juanPedroGalarza/rituals" }
+    ],
+    urls: [
+      { name: "Web page", url: "https://rituals-game.web.app" }
     ]
   },
   {
@@ -42,21 +50,17 @@ const proyects: Array<Proyect> = [
     ]
   },
   {
-    name: "Rituals-Game",
-    picture: "https://i.postimg.cc/y8gkzYX9/rituals.png",
-    description: "An interactive text adventure with a deep story, the web is made with React & Redux-Toolkit.",
+    name: "MyTineraries",
+    picture: "https://i.postimg.cc/76Yfv0Wx/My-Tineraries.png",
+    description: "First project with React in the MindHub bootcamp, where I collaborated with a partner to create an application without the use of extra libraries.",
     repositories: [
-      { name: "Repository", url: "https://github.com/juanPedroGalarza/rituals" }
+      { name: "Front", url: "https://github.com/juanPedroGalarza/mytinerary-juandream" },
+      { name: "Back", url: "https://github.com/IbanezAndrea/mytinerary-back-juandream" },
+      { name: "Native", url: "https://github.com/IbanezAndrea/myTinerary-juandream-mobile" }
     ],
     urls: [
-      { name: "Web page", url: "https://rituals-game.web.app" }
-    ]
-  },
-  {
-    name: "Amazing-Events",
-    description: "Created a pure JavaScript simple site, it is my first completed project.",
-    repositories: [
-      { name: "Repository", url: "https://github.com/juanPedroGalarza/amazing-events" }
+      { name: "Web page", url: "https://my-tinerary-juandream.web.app" },
+      { name: "Backend server", url: "https://my-tinerary-back-juandream.onrender.com" },
     ]
   },
   {
@@ -66,13 +70,13 @@ const proyects: Array<Proyect> = [
       { name: "Repository", url: "https://github.com/juanPedroGalarza/PetShop-MINDY" }
     ]
   },
-  // {
-  //   name: "Portfolio",
-  //   description: "",
-  //   repositories: [
-  //     { name: "Repository", url: "https://github.com/juanPedroGalarza/portfolio-react" }
-  //   ]
-  // },
+  {
+    name: "Amazing-Events",
+    description: "Created a pure JavaScript simple site, it is my first completed project.",
+    repositories: [
+      { name: "Repository", url: "https://github.com/juanPedroGalarza/amazing-events" }
+    ]
+  }
 ];
 
 const proyectsData = {

@@ -35,7 +35,10 @@ export default function ProyectCard({data}:MyProps):JSX.Element {
       >
         {showMoreInfo ?
           <CardContent>
-            <Typography>{description}</Typography>
+            {Array.isArray(description) ?
+              description.map((t: string, i:number): JSX.Element =>
+                (<Typography key={i}>{t}</Typography>))
+              : <Typography>{description}</Typography>}
           </CardContent>
           :
           <ProyectImageCard image={picture} title={name} />

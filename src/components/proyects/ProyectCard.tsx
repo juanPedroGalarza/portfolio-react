@@ -1,4 +1,11 @@
-import { Button, CardActionArea, CardActions, CardContent, Icon, Typography } from "@mui/material";
+import {
+  Button,
+  CardActionArea,
+  CardActions,
+  CardContent,
+  Icon,
+  Typography
+} from "@mui/material";
 import React from "react";
 import { Proyect } from "../../features/proyects/proyectsData";
 import SplitButtonHref from "../buttons/SplitButtonHref";
@@ -36,7 +43,7 @@ export default function ProyectCard({data}:MyProps):JSX.Element {
         {showMoreInfo ?
           <CardContent>
             {Array.isArray(description) ?
-              description.map((t: string, i:number): JSX.Element =>
+              description.map((t: string, i: number): JSX.Element =>
                 (<Typography key={i}>{t}</Typography>))
               : <Typography>{description}</Typography>}
           </CardContent>

@@ -9,11 +9,11 @@ import React from 'react';
 import { Icon } from '@mui/material';
 import { UrlNamed } from '../../features/proyects/proyectsData';
 
-interface MyProps extends React.PropsWithChildren{
+interface MyProps {
   options: Array<UrlNamed>
 };
 
-export default function SplitButtonHref({ options, children }:MyProps):JSX.Element {
+export default function SplitButtonHref({ options, children }:React.PropsWithChildren<MyProps>):JSX.Element {
 
   const [open, setOpen] = React.useState<boolean>(false);
   const anchorRef = React.useRef(null);

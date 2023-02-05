@@ -1,4 +1,9 @@
-import { Location, NavigateFunction, useLocation, useNavigate } from "react-router-dom";
+import {
+    Location,
+    NavigateFunction,
+    useLocation,
+    useNavigate
+} from "react-router-dom";
 import ChangeThemeButton from "./buttons/ChangeThemeButton";
 import AppBarStyled from './StyledComponents/AppBarStyled';
 import DrawerNav from "./DrawerNav";
@@ -20,21 +25,25 @@ export default function Nav():JSX.Element {
     const [isTop, setIsTop]:
         [boolean, React.Dispatch<React.SetStateAction<boolean>>]
         = React.useState<boolean>(true);
+    const location: Location = useLocation();
+    const navigate: NavigateFunction = useNavigate();
+
     function handleScroll():void {
         window.scrollY > 0 ? setIsTop(false) : setIsTop(true);
     };
+
     React.useEffect(():VoidFunction => {
         window.addEventListener("scroll", handleScroll)
         return ():void => window.removeEventListener("scroll", handleScroll);
     }, []);
-    const location: Location = useLocation();
-    const navigate: NavigateFunction = useNavigate();
+
     const links: LinkForButton[] = [
         { to: "/", name: "Home" },
         { to: "/proyects", name: "Proyects" },
         { to: "/#contact", name: "Contact" },
         { to: "/#about", name: "About" },
     ];
+
     function printList(l:LinkForButton):JSX.Element {
         let active = false;
         if (location.hash) {
@@ -56,6 +65,7 @@ export default function Nav():JSX.Element {
             </Button>
         );
     };
+
     return (
         <AppBarStyled
             position="sticky"

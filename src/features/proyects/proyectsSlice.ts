@@ -3,7 +3,7 @@ import proyectsData, { Proyect } from "./proyectsData";
 
 export interface ProyectsState {
   proyects: Array<Proyect>
-}
+};
 
 export const proyectsSlice: Slice<ProyectsState> = createSlice({
   name: "proyectsData",
@@ -11,6 +11,6 @@ export const proyectsSlice: Slice<ProyectsState> = createSlice({
   reducers: {
     // add reducers on future
   }
-})
+});
 
-export default proyectsSlice.reducer
+export default proyectsSlice.reducer;

@@ -5,7 +5,7 @@ import { StoreInterface } from "../features/store";
 import { ThemeState } from "../features/theme/themeSlice";
 import Loading from "./Loading";
 
-const TechnologiesStyled = React.lazy(()=>import("./StyledComponents/TechnologiesStyled"))
+const TechnologiesStyled = React.lazy(() => import("./StyledComponents/TechnologiesStyled"));
 
 interface TechItem {
   name: string,

@@ -1,46 +1,48 @@
 import { Theme } from '@mui/material';
 import React from 'react';
-import { lazy, Suspense } from 'react';
 import { useSelector } from 'react-redux';
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import Loading from './components/Loading';
 import { StoreInterface } from './features/store';
-const MainLayout = lazy(()=>import('./layouts/MainLayout'))
-const Home = lazy(()=>import('./pages/Home'))
-const Proyects = lazy(() => import('./pages/Proyects'))
-const ThemeProvider = lazy(()=>import('@mui/material/styles/ThemeProvider'))
-import darkTheme from "./features/theme/darkTheme"
-import lightTheme from "./features/theme/lightTheme"
+const MainLayout = React.lazy(() => import('./layouts/MainLayout'));
+const Home = React.lazy(() => import('./pages/Home'));
+const Proyects = React.lazy(() => import('./pages/Proyects'));
+const ThemeProvider = React.lazy(() => import('@mui/material/styles/ThemeProvider'));
+import darkTheme from "./features/theme/darkTheme";
+import lightTheme from "./features/theme/lightTheme";
+import { ThemeState } from './features/theme/themeSlice';
 
 interface Themes {
   [key:string]:Theme
-}
+};
 
 
 function App() {
   const themes: Themes = {
     dark: darkTheme,
     light: lightTheme
-  }
+  };
 
-  const {themeName} = useSelector((state:StoreInterface)=>state.theme)
+  const { themeName }: ThemeState
+    = useSelector((state: StoreInterface): ThemeState => state.theme);
+
   return (
-    <Suspense fallback={<Loading sx={{minHeight:"100vh"}}/>}>
+    <React.Suspense fallback={<Loading sx={{minHeight:"100vh"}}/>}>
       <ThemeProvider theme={themes[themeName]}>
         <BrowserRouter>
           <MainLayout >
-            <Suspense fallback={<Loading />}>
+            <React.Suspense fallback={<Loading />}>
               <Routes>
                 <Route index element={<Home />} />
                 <Route path='/proyects' element={<Proyects />} />
                 <Route path='/*' element={<Navigate to="/" />} />
               </Routes>
-            </Suspense>
+            </React.Suspense>
           </MainLayout>
         </BrowserRouter>
       </ThemeProvider>
-    </Suspense>
+    </React.Suspense>
   );
-}
+};
 
 export default App;

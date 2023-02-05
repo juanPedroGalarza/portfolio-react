@@ -15,6 +15,6 @@ const ContactStyled = styled("form")(({ theme }) => ({
   "@media (max-width: 1024px)": {
     maxWidth: 500
   },
-}))
+}));
 
-export default ContactStyled
+export default ContactStyled;

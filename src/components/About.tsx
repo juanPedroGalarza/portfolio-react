@@ -1,8 +1,8 @@
 import React from "react"
-import { Grid, Paper, Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import AboutStyled from "./StyledComponents/AboutStyled";
 
-export default function About() {
+export default function About():JSX.Element {
   return (
     <AboutStyled id="about">
       <Typography variant="h3" paragraph textAlign="center">About</Typography>
@@ -47,5 +47,5 @@ export default function About() {
         </Grid>
       </Grid>
     </AboutStyled>
-  )
-}
+  );
+};

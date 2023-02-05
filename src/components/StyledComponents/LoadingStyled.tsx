@@ -14,5 +14,6 @@ const LoadingStyled = styled(Box)(({ theme }) => ({
   "& span span": {
     backgroundColor: theme.palette.warning.main
   }
-}))
-export default LoadingStyled
+}));
+
+export default LoadingStyled;

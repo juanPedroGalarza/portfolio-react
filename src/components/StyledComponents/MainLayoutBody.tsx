@@ -18,7 +18,7 @@ const BoxBody = styled(Box)(({ theme }) => ({
     backgroundImage: `linear-gradient(225deg, ${theme.palette.secondary.dark} 0%, ${theme.palette.background.default} 22%)`,
     zIndex: -1,
   },
-}))
+}));
 
 export default function MainLayoutBody(props: BoxProps) {
   return (
@@ -31,4 +31,4 @@ export default function MainLayoutBody(props: BoxProps) {
       />
     {props.children}
   </BoxBody>)
-}
+};

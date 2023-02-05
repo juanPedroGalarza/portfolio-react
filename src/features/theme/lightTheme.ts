@@ -15,5 +15,5 @@ const theme: Theme = createTheme({
   typography: {
     fontFamily: "Poppins,Roboto,Helvetica,Arial"
   },
-})
-export default theme
+});
+export default theme;

@@ -47,6 +47,6 @@ const ProyectCardStyled = styled(Card)(({ theme }) => ({
       minHeight: 60
     }
   }
-}))
+}));
 
-export default ProyectCardStyled
+export default ProyectCardStyled;

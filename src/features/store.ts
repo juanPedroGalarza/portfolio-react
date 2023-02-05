@@ -5,7 +5,7 @@ import themeReducer, { ThemeState } from "./theme/themeSlice";
 export interface StoreInterface {
   theme: ThemeState,
   proyectsData: ProyectsState
-}
+};
 
 export const store: ToolkitStore<StoreInterface> = configureStore({
   reducer: {
@@ -16,4 +16,4 @@ export const store: ToolkitStore<StoreInterface> = configureStore({
     inmutableCheck: false,
     serializableCheck: false,
   })
-})
+});

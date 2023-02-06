@@ -65,9 +65,9 @@ const ProyectCardStyled = styled(Card)(({ theme }) => ({
     },
   },
   "@media (max-width: 768px)": {
-    minHeight: 200,
+    minHeight: 250,
     "& .MuiCardActionArea-root": {
-      height: 140,
+      height: 160,
     },
     "& .MuiCardActions-root": {
       minHeight: 60

@@ -1,6 +1,6 @@
 import Loading from "../components/Loading";
 import MainStyled from "../components/StyledComponents/MainStyled";
-import { Grid } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
 import React from "react";
 import { StoreInterface } from "../features/store";
@@ -22,9 +22,11 @@ export default function Proyects():JSX.Element {
         );
     };
     return (
-        <MainStyled>
-            <h1>My Proyects</h1>
-            <Grid container spacing={5}>
+        <MainStyled
+            sx={{gap:1}}
+        >
+            <Typography variant="h2" sx={{fontFamily:"'Work Sans'"}}>My Proyects</Typography>
+            <Grid container spacing={5} sx={{justifyContent: "center"}}>
                 <React.Suspense fallback={<Loading />} >
                     {proyects.map(printCards)}
                 </React.Suspense>

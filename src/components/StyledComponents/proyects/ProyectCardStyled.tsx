@@ -4,6 +4,25 @@ const ProyectCardStyled = styled(Card)(({ theme }) => ({
   position: "relative",
   minHeight: 360,
   overflow: "visible",
+  "& .MuiCardHeader-root": {
+    position: "relative",
+    "& .MuiCardHeader-title": {
+      position: "relative",
+      display: "inline",
+      fontFamily: "'Teko'",
+      "&::after": {
+        content: "''",
+        height: 3,
+        width: 0,
+        backgroundColor: theme.palette.warning.main,
+        position: 'absolute',
+        bottom: -3,
+        left: '50%',
+        transitionTimingFunction: theme.transitions.easing.easeOut,
+        transitionDuration: theme.transitions.duration.complex + "ms"
+      },
+    },
+  },
   "& .MuiCardActionArea-root": {
     height: 250,
     overflow: "hidden",
@@ -28,6 +47,13 @@ const ProyectCardStyled = styled(Card)(({ theme }) => ({
     height: "100%",
     overflowY: "auto",
     transform: "rotateY(180deg)"
+  },
+  "&:hover .MuiCardHeader-title": {
+    "&::after": {
+      width: "100%",
+      height: 3,
+      left: 0
+    },
   },
   "@media (max-width: 1440px)": {
     minHeight: 320,

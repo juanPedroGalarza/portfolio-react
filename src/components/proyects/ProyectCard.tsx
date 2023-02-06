@@ -4,7 +4,7 @@ import {
   CardActions,
   CardContent,
   Icon,
-  Typography
+  Typography, CardHeader, Avatar, IconButton
 } from "@mui/material";
 import React from "react";
 import { Proyect } from "../../features/proyects/proyectsData";
@@ -36,6 +36,9 @@ export default function ProyectCard({data}:MyProps):JSX.Element {
     <ProyectCardStyled
       raised
     >
+      <CardHeader
+        title={name.split("-").join(" ")}
+      />
       <CardActionArea
         onClick={toggleMoreInfo}
         className={showMoreInfo ? "rotate" : ""}

@@ -6,18 +6,14 @@ const ProyectImageStyled = styled(Box)(({ theme }) => ({
   justifyContent: "center",
   alignItems: "center",
   height: "100%",
-  "& .MuiTypography-root": {
-    position: "absolute",
-    display: "inline",
-    margin: "0 auto",
-    border: `1px solid ${theme.palette.common.white}`,
-    color: theme.palette.common.white,
-    backgroundColor: `${alpha(theme.palette.grey[600], 0.67)}`,
-    padding: ".5rem"
-  },
+  backgroundColor: `${alpha(theme.palette.grey[600], 0.87)}`,
   "& .MuiCardMedia-img": {
-    maxHeight: "100%"
-  }
+    maxHeight: "100%",
+    transitionDuration: theme.transitions.duration.short + "ms",
+    "&:hover": {
+      filter: "brightness(.8)"
+    }
+  },
 }));
 
 export default ProyectImageStyled;

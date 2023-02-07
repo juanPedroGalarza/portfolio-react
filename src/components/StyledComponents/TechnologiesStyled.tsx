@@ -8,8 +8,10 @@ const TechnologiesStyled = styled(Grid)<moreProps>(({ theme, themename }) => ({
   width: "90%",
   justifyContent: "space-between",
   justifyItems: "center",
+  maxWidth: 1050,
   "& > .MuiTypography-h4": {
-    width: "100%"
+    width: "100%",
+    paddingBottom: ".5rem",
   },
   "& > .MuiGrid-item > .MuiBox-root": {
     backgroundColor: alpha(theme.palette.background.paper, .37),
@@ -56,6 +58,15 @@ const TechnologiesStyled = styled(Grid)<moreProps>(({ theme, themename }) => ({
         },
       },
     }
+  },
+  "@media (max-width: 1440px)": {
+    maxWidth: 850
+  },
+  "@media (max-width: 1024px)": {
+    maxWidth: 700
+  },
+  "@media (max-width: 768px)": {
+    maxWidth: 600
   },
 }));
 

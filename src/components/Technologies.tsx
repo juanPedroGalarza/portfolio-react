@@ -83,7 +83,7 @@ export default function Technologies(): JSX.Element {
 
   function printTech(tech:TechItem): JSX.Element {
     return (
-      <Grid item xs={12} sm={5} md={8} lg={6} key={tech.name}>
+      <Grid item xs={12} sm={4} md={6} key={tech.name}>
         <Box>
           <img src={tech.image} alt={tech.name} className="image-tech" />
           <Typography variant="h5" align="center">{tech.name}</Typography>
@@ -93,9 +93,9 @@ export default function Technologies(): JSX.Element {
   };
   function printTechList(techList: TechList): JSX.Element {
     return (
-      <Grid item sm={12} md={4} lg={5} xl={4} key={techList.category}>
+      <Grid item sm={12} md={5} key={techList.category}>
         <Box>
-          <Typography variant="h4" paragraph>{techList.category}</Typography>
+          <Typography variant="h4" paragraph >{techList.category}</Typography>
           <Grid container spacing={3}>
             {techList.techs.map(printTech)}
           </Grid>
@@ -106,7 +106,7 @@ export default function Technologies(): JSX.Element {
 
   return (
     <React.Suspense fallback={<Loading />}>
-      <TechnologiesStyled container spacing={5} themename={themeName}>
+      <TechnologiesStyled container themename={themeName}>
         <Typography variant="h4" align="center">Technologies</Typography>
         {techData.map(printTechList)}
       </TechnologiesStyled>

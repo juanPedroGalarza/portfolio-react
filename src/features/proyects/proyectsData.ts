@@ -26,8 +26,8 @@ const proyects: Array<Proyect> = [
   },
   {
     name: "Rituals-Game",
-    picture: "https://i.postimg.cc/y8gkzYX9/rituals.png",
-    description: "An interactive text adventure with a deep story, the web is made with React & Redux-Toolkit.",
+    picture: "https://i.postimg.cc/bwLZmjq8/rituals.png",
+    description: "An interactive text adventure with a deep story, the web is made with React, Redux-Toolkit & TypeScript",
     repositories: [
       { name: "Repository", url: "https://github.com/juanPedroGalarza/rituals" }
     ],

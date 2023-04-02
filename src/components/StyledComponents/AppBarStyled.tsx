@@ -1,8 +1,8 @@
 import { AppBar, styled, alpha } from "@mui/material";
 
 interface MyProps {
-  istop: {v:boolean}
-};
+  istop: { v: boolean };
+}
 
 const AppBarStyled = styled(AppBar)<MyProps>(({ theme, istop }) => ({
   position: "sticky",
@@ -14,7 +14,7 @@ const AppBarStyled = styled(AppBar)<MyProps>(({ theme, istop }) => ({
   alignItems: "flex-start",
   "& .menu-button": {
     display: "none",
-    paddingLeft: "1.5rem"
+    paddingLeft: "1.5rem",
   },
   "& > .MuiContainer-root": {
     display: "flex",
@@ -26,29 +26,29 @@ const AppBarStyled = styled(AppBar)<MyProps>(({ theme, istop }) => ({
       gap: "0.2rem",
       alignItems: "center",
       "& > .MuiButtonGroup-root": {
-        justifySelf: "flex-start"
+        justifySelf: "flex-start",
       },
     },
     "& > .MuiTypography-root": {
       flexGrow: 1,
       fontFamily: "'Work Sans'",
-      color: alpha(theme.palette.warning.main, .87),
+      color: alpha(theme.palette.warning.main, 0.87),
     },
   },
   "@media (max-width: 768px)": {
     minHeight: 0,
     "& .MuiToolbar-root": {
-      display: "none"
+      display: "none",
     },
     "& .menu-button": {
-      display: "inline"
+      display: "inline",
     },
     "& > .MuiContainer-root": {
       minHeight: "5vh",
       display: istop.v ? "none" : "flex",
       "& > .MuiTypography-root": {
-        paddingBottom: "1rem"
-      }
+        paddingBottom: "1rem",
+      },
     },
   },
 }));

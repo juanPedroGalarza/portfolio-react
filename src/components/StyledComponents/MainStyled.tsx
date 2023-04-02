@@ -10,13 +10,10 @@ const MainStyled = styled(Container)(({ theme }) => ({
   gap: "6rem",
   paddingBottom: "6rem",
 }));
-export default function Main(props:ContainerProps) {
+export default function Main(props: ContainerProps) {
   return (
-    <MainStyled
-      maxWidth="xl"
-      {...props}
-    >
+    <MainStyled maxWidth='xl' {...props}>
       {props.children}
     </MainStyled>
   );
-};
+}

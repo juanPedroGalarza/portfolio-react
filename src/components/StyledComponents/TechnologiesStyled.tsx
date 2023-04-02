@@ -1,8 +1,8 @@
 import { Grid, styled, alpha } from "@mui/material";
 
 interface moreProps {
-  themename?: string
-};
+  themename?: string;
+}
 
 const TechnologiesStyled = styled(Grid)<moreProps>(({ theme, themename }) => ({
   width: "90%",
@@ -14,8 +14,8 @@ const TechnologiesStyled = styled(Grid)<moreProps>(({ theme, themename }) => ({
     paddingBottom: ".5rem",
   },
   "& > .MuiGrid-item > .MuiBox-root": {
-    backgroundColor: alpha(theme.palette.background.paper, .37),
-    boxShadow: `1px 1px 8px ${alpha(theme.palette.background.paper, .37)}`,
+    backgroundColor: alpha(theme.palette.background.paper, 0.37),
+    boxShadow: `1px 1px 8px ${alpha(theme.palette.background.paper, 0.37)}`,
     borderRadius: 3,
     padding: "2rem",
     "& > .MuiGrid-container": {
@@ -49,24 +49,24 @@ const TechnologiesStyled = styled(Grid)<moreProps>(({ theme, themename }) => ({
             fontFamily: "'Teko'",
           },
           "&:hover": {
-            backgroundColor: alpha(theme.palette.text.secondary, .17),
+            backgroundColor: alpha(theme.palette.text.secondary, 0.17),
             borderRadius: 4,
             "& .image-tech": {
               transform: `scale(.85)`,
             },
-          }
+          },
         },
       },
-    }
+    },
   },
   "@media (max-width: 1440px)": {
-    maxWidth: 850
+    maxWidth: 850,
   },
   "@media (max-width: 1024px)": {
-    maxWidth: 700
+    maxWidth: 700,
   },
   "@media (max-width: 768px)": {
-    maxWidth: 600
+    maxWidth: 600,
   },
 }));
 

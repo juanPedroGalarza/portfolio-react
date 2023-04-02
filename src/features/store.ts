@@ -3,17 +3,18 @@ import { ToolkitStore } from "@reduxjs/toolkit/dist/configureStore";
 import proyectsReducer, { ProyectsState } from "./proyects/proyectsSlice";
 import themeReducer, { ThemeState } from "./theme/themeSlice";
 export interface StoreInterface {
-  theme: ThemeState,
-  proyectsData: ProyectsState
-};
+  theme: ThemeState;
+  proyectsData: ProyectsState;
+}
 
 export const store: ToolkitStore<StoreInterface> = configureStore({
   reducer: {
     theme: themeReducer,
-    proyectsData: proyectsReducer
+    proyectsData: proyectsReducer,
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware({
-    inmutableCheck: false,
-    serializableCheck: false,
-  })
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      inmutableCheck: false,
+      serializableCheck: false,
+    }),
 });

@@ -5,17 +5,19 @@ import { StoreInterface } from "../features/store";
 import { ThemeState } from "../features/theme/themeSlice";
 import Loading from "./Loading";
 
-const TechnologiesStyled = React.lazy(() => import("./StyledComponents/TechnologiesStyled"));
+const TechnologiesStyled = React.lazy(
+  () => import("./StyledComponents/TechnologiesStyled")
+);
 
 interface TechItem {
-  name: string,
-  image: string
-};
+  name: string;
+  image: string;
+}
 
 interface TechList {
-  category: string,
-  techs: Array<TechItem>
-};
+  category: string;
+  techs: Array<TechItem>;
+}
 
 const techData: Array<TechList> = [
   {
@@ -23,93 +25,97 @@ const techData: Array<TechList> = [
     techs: [
       {
         name: "HTML",
-        image: "https://i.postimg.cc/bNfXSGHL/logo-html.png"
+        image: "https://i.postimg.cc/bNfXSGHL/logo-html.png",
       },
       {
         name: "CSS",
-        image: "https://i.postimg.cc/NMZ34Lhs/logo-css.png"
+        image: "https://i.postimg.cc/NMZ34Lhs/logo-css.png",
       },
       {
         name: "Bootstrap",
-        image: "https://i.postimg.cc/FRmdKbsc/logo-bootstrap.png"
+        image: "https://i.postimg.cc/FRmdKbsc/logo-bootstrap.png",
       },
       {
         name: "JavaScript",
-        image: "https://i.postimg.cc/3NpPb77g/logo-js.png"
+        image: "https://i.postimg.cc/3NpPb77g/logo-js.png",
       },
       {
         name: "TypeScript",
-        image: "https://i.postimg.cc/1Rvn9qxn/logo-typescript.png"
+        image: "https://i.postimg.cc/1Rvn9qxn/logo-typescript.png",
       },
       {
         name: "React JS & Native",
-        image: "https://i.postimg.cc/Gh9B9mrM/logo-react.png"
+        image: "https://i.postimg.cc/Gh9B9mrM/logo-react.png",
       },
       {
         name: "Redux & Toolkit",
-        image: "https://i.postimg.cc/J4gsXCzR/logo-redux.png"
+        image: "https://i.postimg.cc/J4gsXCzR/logo-redux.png",
       },
       {
         name: "Material ui",
-        image: "https://i.postimg.cc/NjZDLBCf/logo-material-ui.png"
+        image: "https://i.postimg.cc/NjZDLBCf/logo-material-ui.png",
       },
-    ]
+    ],
   },
   {
     category: "Back End",
     techs: [
       {
         name: "Node JS",
-        image: "https://i.postimg.cc/JnqyHyGF/logo-node.png"
+        image: "https://i.postimg.cc/JnqyHyGF/logo-node.png",
       },
       {
         name: "Express",
-        image: "https://i.postimg.cc/rsZKgvGC/logo-express.png"
+        image: "https://i.postimg.cc/rsZKgvGC/logo-express.png",
       },
       {
         name: "MongoDB",
-        image: "https://i.postimg.cc/JzR9K9Fk/logo-mongodb.png"
+        image: "https://i.postimg.cc/JzR9K9Fk/logo-mongodb.png",
       },
-    ]
+    ],
   },
 ];
 
-
-
-
-
 export default function Technologies(): JSX.Element {
-  const { themeName } = useSelector((state: StoreInterface):ThemeState => state.theme);
+  const { themeName } = useSelector(
+    (state: StoreInterface): ThemeState => state.theme
+  );
 
-  function printTech(tech:TechItem): JSX.Element {
+  function printTech(tech: TechItem): JSX.Element {
     return (
       <Grid item xs={12} sm={4} md={6} key={tech.name}>
         <Box>
-          <img src={tech.image} alt={tech.name} className="image-tech" />
-          <Typography variant="h5" align="center">{tech.name}</Typography>
+          <img src={tech.image} alt={tech.name} className='image-tech' />
+          <Typography variant='h5' align='center'>
+            {tech.name}
+          </Typography>
         </Box>
       </Grid>
     );
-  };
+  }
   function printTechList(techList: TechList): JSX.Element {
     return (
       <Grid item sm={12} md={5} key={techList.category}>
         <Box>
-          <Typography variant="h4" paragraph >{techList.category}</Typography>
+          <Typography variant='h4' paragraph>
+            {techList.category}
+          </Typography>
           <Grid container spacing={3}>
             {techList.techs.map(printTech)}
           </Grid>
         </Box>
       </Grid>
     );
-  };
+  }
 
   return (
     <React.Suspense fallback={<Loading />}>
       <TechnologiesStyled container themename={themeName}>
-        <Typography variant="h4" align="center">Technologies</Typography>
+        <Typography variant='h4' align='center'>
+          Technologies
+        </Typography>
         {techData.map(printTechList)}
       </TechnologiesStyled>
     </React.Suspense>
   );
-};
+}

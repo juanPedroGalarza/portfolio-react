@@ -7,15 +7,15 @@ const Presentation = React.lazy(() => import("../components/Presentation"));
 const Technologies = React.lazy(() => import("../components/Technologies"));
 const About = React.lazy(() => import("../components/About"));
 
-export default function Home():JSX.Element {
-    return (
-        <MainStyled>
-            <React.Suspense fallback={<Loading />}>
-                <Presentation />
-                <About />
-                <Technologies />
-                <Contact />
-            </React.Suspense>
-        </MainStyled>
-    );
-};
+export default function Home(): JSX.Element {
+  return (
+    <MainStyled>
+      <React.Suspense fallback={<Loading />}>
+        <Presentation />
+        <About />
+        <Technologies />
+        <Contact />
+      </React.Suspense>
+    </MainStyled>
+  );
+}

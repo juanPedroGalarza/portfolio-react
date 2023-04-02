@@ -9,7 +9,7 @@ const DrawerNavStyled = styled(Drawer)(({ theme }) => ({
     alignItems: "center",
     "& .MuiTypography-root": {
       padding: "1rem 2rem",
-      color: theme.palette.warning.main
+      color: theme.palette.warning.main,
     },
   },
 }));

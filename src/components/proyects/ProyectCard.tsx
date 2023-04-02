@@ -4,7 +4,8 @@ import {
   CardActions,
   CardContent,
   Icon,
-  Typography, CardHeader, Avatar, IconButton
+  Typography,
+  CardHeader,
 } from "@mui/material";
 import React from "react";
 import { Proyect } from "../../features/proyects/proyectsData";
@@ -14,60 +15,58 @@ import ProyectCardStyled from "../StyledComponents/proyects/ProyectCardStyled";
 import ProyectImageCard from "./ProyectImageCard";
 
 interface MyProps {
-  data: Proyect
-};
+  data: Proyect;
+}
 
-export default function ProyectCard({data}:MyProps):JSX.Element {
-  const {
-    picture,
-    name,
-    description,
-    repositories,
-    urls
-  }: Proyect = data;
+export default function ProyectCard({ data }: MyProps): JSX.Element {
+  const { picture, name, description, repositories, urls }: Proyect = data;
 
-  const [showMoreInfo, setShowMoreInfo]:
-    [boolean, React.Dispatch<React.SetStateAction<boolean>>]
-    = React.useState<boolean>(false);
-  const toggleMoreInfo: VoidFunction
-    = (): void => setShowMoreInfo((v: boolean): boolean => !v);
+  const [showMoreInfo, setShowMoreInfo]: [
+    boolean,
+    React.Dispatch<React.SetStateAction<boolean>>
+  ] = React.useState<boolean>(false);
+  const toggleMoreInfo: VoidFunction = (): void =>
+    setShowMoreInfo((v: boolean): boolean => !v);
 
   return (
-    <ProyectCardStyled
-      raised
-    >
-      <CardHeader
-        title={name.split("-").join(" ")}
-      />
+    <ProyectCardStyled raised>
+      <CardHeader title={name.split("-").join(" ")} />
       <CardActionArea
         onClick={toggleMoreInfo}
-        className={showMoreInfo ? "rotate" : ""}
-      >
-        {showMoreInfo ?
+        className={showMoreInfo ? "rotate" : ""}>
+        {showMoreInfo ? (
           <CardContent>
-            {Array.isArray(description) ?
-              description.map((t: string, i: number): JSX.Element =>
-                (<Typography key={i}>{t}</Typography>))
-              : <Typography>{description}</Typography>}
+            {Array.isArray(description) ? (
+              description.map(
+                (t: string, i: number): JSX.Element => (
+                  <Typography key={i}>{t}</Typography>
+                )
+              )
+            ) : (
+              <Typography>{description}</Typography>
+            )}
           </CardContent>
-          :
+        ) : (
           <ProyectImageCard image={picture} title={name} />
-        }
-        <OneBar bcgcolor="primary" height="3" className="card-bar" />
-        <OneBar bcgcolor="info" height="2" second="true" className="card-bar" />
+        )}
+        <OneBar bcgcolor='primary' height='3' className='card-bar' />
+        <OneBar bcgcolor='info' height='2' second='true' className='card-bar' />
       </CardActionArea>
-      <CardActions disableSpacing >
+      <CardActions disableSpacing>
         <Button
-          color="info"
-          variant="contained"
-          size="small"
+          color='info'
+          variant='contained'
+          size='small'
           onClick={toggleMoreInfo}
           sx={{
             color: "#fff",
-            textTransform: "none"
+            textTransform: "none",
           }}
-          endIcon={<Icon>{showMoreInfo ? "arrow_drop_up_icon" : "arrow_drop_down_icon"}</Icon>}
-        >
+          endIcon={
+            <Icon>
+              {showMoreInfo ? "arrow_drop_up_icon" : "arrow_drop_down_icon"}
+            </Icon>
+          }>
           Info
         </Button>
         <SplitButtonHref options={repositories}>Repostitories</SplitButtonHref>
@@ -75,4 +74,4 @@ export default function ProyectCard({data}:MyProps):JSX.Element {
       </CardActions>
     </ProyectCardStyled>
   );
-};
+}

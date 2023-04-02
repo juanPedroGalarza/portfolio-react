@@ -11,8 +11,8 @@ const ProyectImageStyled = styled(Box)(({ theme }) => ({
     maxHeight: "100%",
     transitionDuration: theme.transitions.duration.short + "ms",
     "&:hover": {
-      filter: "brightness(.8)"
-    }
+      filter: "brightness(.8)",
+    },
   },
 }));
 

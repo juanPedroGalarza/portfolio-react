@@ -9,11 +9,11 @@ const LoadingStyled = styled(Box)(({ theme }) => ({
   position: "relative",
   "& > span": {
     margin: 0,
-    gap: 5
+    gap: 5,
   },
   "& span span": {
-    backgroundColor: theme.palette.warning.main
-  }
+    backgroundColor: theme.palette.warning.main,
+  },
 }));
 
 export default LoadingStyled;

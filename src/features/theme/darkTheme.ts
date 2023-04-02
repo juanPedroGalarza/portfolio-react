@@ -1,5 +1,5 @@
-import { teal, grey } from '@mui/material/colors';
-import { createTheme, Theme } from '@mui/material/styles';
+import { teal, grey } from "@mui/material/colors";
+import { createTheme, Theme } from "@mui/material/styles";
 
 const theme: Theme = createTheme({
   palette: {
@@ -7,14 +7,14 @@ const theme: Theme = createTheme({
     primary: {
       main: teal[500],
       dark: "#00695f",
-      light: "#33ab9f"
+      light: "#33ab9f",
     },
     background: {
-      paper: grey[900]
-    }
+      paper: grey[900],
+    },
   },
   typography: {
-    fontFamily: "Poppins,Roboto,Helvetica,Arial"
+    fontFamily: "Poppins,Roboto,Helvetica,Arial",
   },
 });
 export default theme;

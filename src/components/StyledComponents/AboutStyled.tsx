@@ -14,22 +14,22 @@ const AboutStyled = styled(Box)(({ theme }) => ({
   transition: "all .7s",
   ":hover": {
     boxShadow: `1px 1px 10px ${theme.palette.action.selected}`,
-    backgroundColor: theme.palette.action.selected
+    backgroundColor: theme.palette.action.selected,
   },
   "& .about-col": {
     display: "flex",
     justifyContent: "center",
     flexDirection: "column",
-    alignItems: "flex-start"
+    alignItems: "flex-start",
   },
   "@media (max-width: 1440px)": {
-    maxWidth: 850
+    maxWidth: 850,
   },
   "@media (max-width: 1024px)": {
-    maxWidth: 700
+    maxWidth: 700,
   },
   "@media (max-width: 768px)": {
-    maxWidth: 600
+    maxWidth: 600,
   },
 }));
 

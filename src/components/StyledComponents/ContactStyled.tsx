@@ -10,10 +10,10 @@ const ContactStyled = styled("form")(({ theme }) => ({
   maxWidth: 1000,
   gap: 20,
   "@media (max-width: 1440px)": {
-    maxWidth: 700
+    maxWidth: 700,
   },
   "@media (max-width: 1024px)": {
-    maxWidth: 500
+    maxWidth: 500,
   },
 }));
 

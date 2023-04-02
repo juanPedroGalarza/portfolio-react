@@ -7,7 +7,7 @@ const BoxBody = styled(Box)(({ theme }) => ({
   minHeight: "100vh",
   width: "100%",
   "& .bcg-bar": {
-    position: "fixed"
+    position: "fixed",
   },
   "&:before": {
     content: '""',
@@ -24,11 +24,12 @@ export default function MainLayoutBody(props: BoxProps) {
   return (
     <BoxBody>
       <BackgroundBars
-        bcgcolor="error"
-        secondcolor="info"
-        className="bcg-bar"
-        sx={{zIndex: -1}}
+        bcgcolor='error'
+        secondcolor='info'
+        className='bcg-bar'
+        sx={{ zIndex: -1 }}
       />
-    {props.children}
-  </BoxBody>)
-};
+      {props.children}
+    </BoxBody>
+  );
+}

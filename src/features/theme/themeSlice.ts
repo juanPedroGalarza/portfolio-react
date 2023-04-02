@@ -1,17 +1,19 @@
 import { createSlice, Slice } from "@reduxjs/toolkit";
 
-export interface ThemeState { themeName: string };
+export interface ThemeState {
+  themeName: string;
+}
 
 export const themeSlice: Slice<ThemeState> = createSlice({
   name: "theme",
   initialState: {
-    themeName: "dark"
+    themeName: "dark",
   },
   reducers: {
     changeTheme: (state, action) => {
-      state.themeName = action.payload
-    }
-  }
+      state.themeName = action.payload;
+    },
+  },
 });
 
 export const { changeTheme } = themeSlice.actions;

@@ -8,11 +8,11 @@ export default function Presentation() {
   const resumeList: Array<{ url: string; name: string }> = [
     {
       name: "Spanish",
-      url: "https://drive.google.com/file/d/1mpI3FEAZEP2ZaGREL-5uSUuCio1t_TZM/view?usp=share_link",
+      url: "https://drive.google.com/file/d/1T-NBvmkCkfTbWrLRbvYF7CGEL2urdYVV/view?usp=share_link",
     },
     {
       name: "English",
-      url: "https://drive.google.com/file/d/159qfo4ZRBMwr7ydC2ljY_K1GEVKYoNxu/view?usp=share_link",
+      url: "https://drive.google.com/file/d/1msAzvrQ4QCrC5yT6KIlD3qLaR9ZDTNe1/view?usp=share_link",
     },
   ];
 

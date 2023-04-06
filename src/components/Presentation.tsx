@@ -19,7 +19,17 @@ export default function Presentation() {
   return (
     <PresentationStyled container spacing={4}>
       <Grid item sm={12} md={10} lg={8} xl={7} className='title-presentation'>
-        <Typography variant='h1'>Juan Pedro Galarza</Typography>
+        <Typography
+          variant='h1'
+          sx={{
+            backgroundImage: `url("https://media.giphy.com/media/WQr1oECbU3AqMfc8fB/giphy.gif")`,
+            backgroundSize: "cover",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            fontFamily: "'Changa One'",
+          }}>
+          Juan Pedro Galarza
+        </Typography>
       </Grid>
       <Grid
         item

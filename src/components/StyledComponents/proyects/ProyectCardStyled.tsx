@@ -4,6 +4,11 @@ const ProyectCardStyled = styled(Card)(({ theme }) => ({
   position: "relative",
   minHeight: 360,
   overflow: "visible",
+  transform: "scale(.9)",
+  transition: "transform .5s ease",
+  "&:hover": {
+    transform: "scale(1)",
+  },
   "& .MuiCardHeader-root": {
     position: "relative",
     "& .MuiCardHeader-title": {

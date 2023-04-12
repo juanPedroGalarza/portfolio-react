@@ -24,7 +24,7 @@ export default function Proyects(): JSX.Element {
     );
   }
   return (
-    <MainStyled sx={{ gap: 1 }}>
+    <MainStyled sx={{ gap: 1, justifyContent: "space-between" }}>
       <Typography variant='h2' sx={{ fontFamily: "'Work Sans'" }}>
         My Proyects
       </Typography>

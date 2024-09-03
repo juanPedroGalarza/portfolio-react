@@ -1,18 +1,15 @@
-import { Theme } from "@mui/material";
+import { Theme, ThemeProvider } from "@mui/material";
 import React from "react";
 import { useSelector } from "react-redux";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
-import Loading from "./components/Loading";
-import { StoreInterface } from "./features/store";
-const MainLayout = React.lazy(() => import("./layouts/MainLayout"));
-const Home = React.lazy(() => import("./pages/Home"));
-const Proyects = React.lazy(() => import("./pages/Proyects"));
-const ThemeProvider = React.lazy(
-  () => import("@mui/material/styles/ThemeProvider")
-);
-import darkTheme from "./features/theme/darkTheme";
-import lightTheme from "./features/theme/lightTheme";
-import { ThemeState } from "./features/theme/themeSlice";
+import Loading from "./components/Loading.js";
+import { StoreInterface } from "./redux/store.js";
+const MainLayout = React.lazy(() => import("./layouts/MainLayout.js"));
+const Home = React.lazy(() => import("./pages/Home.js"));
+const Proyects = React.lazy(() => import("./pages/Proyects.js"));
+import darkTheme from "./features/theme/darkTheme.js";
+import lightTheme from "./features/theme/lightTheme.js";
+import { ThemeState } from "./features/theme/themeSlice.js";
 
 interface Themes {
   [key: string]: Theme;

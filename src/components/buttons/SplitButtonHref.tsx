@@ -1,13 +1,15 @@
-import Button from "@mui/material/Button";
-import ClickAwayListener from "@mui/material/ClickAwayListener";
-import Grow from "@mui/material/Grow";
-import Paper from "@mui/material/Paper";
-import Popper from "@mui/material/Popper";
-import MenuItem from "@mui/material/MenuItem";
-import MenuList from "@mui/material/MenuList";
-import React from "react";
-import { Icon } from "@mui/material";
-import { UrlNamed } from "../../features/proyects/proyectsData";
+import React from 'react';
+import {
+  Icon,
+  Button,
+  ClickAwayListener,
+  MenuList,
+  MenuItem,
+  Popper,
+  Paper,
+  Grow,
+} from '@mui/material';
+import { UrlNamed } from '../../features/data/proyectsData.js';
 
 interface MyProps {
   options: Array<UrlNamed>;
@@ -38,16 +40,16 @@ export default function SplitButtonHref({
     <>
       <Button
         size='small'
-        aria-expanded={open ? "true" : undefined}
+        aria-expanded={open ? 'true' : undefined}
         aria-label='select merge strategy'
         aria-haspopup='menu'
         onClick={handleToggle}
         endIcon={
-          <Icon>{open ? "arrow_drop_up_icon" : "arrow_drop_down_icon"}</Icon>
+          <Icon>{open ? 'arrow_drop_up_icon' : 'arrow_drop_down_icon'}</Icon>
         }
         ref={anchorRef}
         variant='contained'
-        sx={{ textTransform: "none" }}>
+        sx={{ textTransform: 'none' }}>
         {children}
       </Button>
       <Popper
@@ -64,7 +66,7 @@ export default function SplitButtonHref({
             {...TransitionProps}
             style={{
               transformOrigin:
-                placement === "bottom" ? "center top" : "center bottom",
+                placement === 'bottom' ? 'center top' : 'center bottom',
             }}>
             <Paper>
               <ClickAwayListener onClickAway={handleClose}>

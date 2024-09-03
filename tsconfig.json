@@ -4,11 +4,11 @@
       "sourceMap": true,
       "strictNullChecks": false,
       "strict":true,
-      "module": "Node16",
+      "module": "NodeNext",
       "jsx": "react",
       "target": "es6",
       "allowJs": true,
-      "moduleResolution": "Node",
+      "moduleResolution": "NodeNext",
   },
   "include": [
       "./src/"

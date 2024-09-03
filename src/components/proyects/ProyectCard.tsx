@@ -6,13 +6,13 @@ import {
   Icon,
   Typography,
   CardHeader,
-} from "@mui/material";
-import React from "react";
-import { Proyect } from "../../features/proyects/proyectsData";
-import SplitButtonHref from "../buttons/SplitButtonHref";
-import { OneBar } from "../StyledComponents/BackgroundBars";
-import ProyectCardStyled from "../StyledComponents/proyects/ProyectCardStyled";
-import ProyectImageCard from "./ProyectImageCard";
+} from '@mui/material';
+import React from 'react';
+import { Proyect } from '../../features/data/proyectsData.js';
+import SplitButtonHref from '../buttons/SplitButtonHref.js';
+import { OneBar } from '../StyledComponents/BackgroundBars.js';
+import ProyectCardStyled from '../StyledComponents/proyects/ProyectCardStyled.js';
+import ProyectImageCard from './ProyectImageCard.js';
 
 interface MyProps {
   data: Proyect;
@@ -30,10 +30,10 @@ export default function ProyectCard({ data }: MyProps): JSX.Element {
 
   return (
     <ProyectCardStyled raised>
-      <CardHeader title={name.split("-").join(" ")} />
+      <CardHeader title={name.split('-').join(' ')} />
       <CardActionArea
         onClick={toggleMoreInfo}
-        className={showMoreInfo ? "rotate" : ""}>
+        className={showMoreInfo ? 'rotate' : ''}>
         {showMoreInfo ? (
           <CardContent>
             {Array.isArray(description) ? (
@@ -59,12 +59,12 @@ export default function ProyectCard({ data }: MyProps): JSX.Element {
           size='small'
           onClick={toggleMoreInfo}
           sx={{
-            color: "#fff",
-            textTransform: "none",
+            color: '#fff',
+            textTransform: 'none',
           }}
           endIcon={
             <Icon>
-              {showMoreInfo ? "arrow_drop_up_icon" : "arrow_drop_down_icon"}
+              {showMoreInfo ? 'arrow_drop_up_icon' : 'arrow_drop_down_icon'}
             </Icon>
           }>
           Info

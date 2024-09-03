@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   Box,
   Divider,
@@ -7,17 +7,17 @@ import {
   ListItem,
   ListItemButton,
   ListItemText,
-} from "@mui/material";
-import IconButton from "@mui/material/IconButton";
+  IconButton,
+} from '@mui/material';
 import {
   Location,
   NavigateFunction,
   useLocation,
   useNavigate,
-} from "react-router";
-import ChangeThemeButton from "./buttons/ChangeThemeButton";
-import { LinkForButton } from "./NavBar";
-import DrawerNavStyled from "./StyledComponents/DrawerNavStyled";
+} from 'react-router';
+import ChangeThemeButton from './buttons/ChangeThemeButton.js';
+import { LinkForButton } from './NavBar.js';
+import DrawerNavStyled from './StyledComponents/DrawerNavStyled.js';
 
 interface MyProps {
   list: LinkForButton[];
@@ -51,7 +51,7 @@ export default function DrawerNav({ list }: MyProps): JSX.Element {
           color='orange'>
           <ListItemText
             primary={l.name}
-            primaryTypographyProps={{ variant: "h6" }}
+            primaryTypographyProps={{ variant: 'h6' }}
           />
         </ListItemButton>
       </ListItem>

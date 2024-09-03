@@ -1,6 +1,6 @@
 import { Box, BoxProps, styled } from "@mui/material";
 import React from "react";
-import BackgroundBars from "./BackgroundBars";
+import BackgroundBars from "./BackgroundBars.js";
 
 const BoxBody = styled(Box)(({ theme }) => ({
   color: theme.palette.text.primary,

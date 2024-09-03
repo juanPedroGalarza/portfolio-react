@@ -8,8 +8,8 @@ import {
   ListItemText,
 } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import { changeTheme, ThemeState } from "../../features/theme/themeSlice";
-import { StoreInterface } from "../../features/store";
+import { changeTheme, ThemeState } from "../../features/theme/themeSlice.js";
+import { StoreInterface } from "../../redux/store.js";
 
 export default function ChangeThemeButton({
   isFor,

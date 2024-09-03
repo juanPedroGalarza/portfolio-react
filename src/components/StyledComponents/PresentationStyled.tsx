@@ -1,9 +1,10 @@
-import { styled, Grid } from "@mui/material";
+import { styled, Grid2 } from "@mui/material";
 
-const PresentationStyled = styled(Grid)(({ theme }) => ({
+const PresentationStyled = styled(Grid2)(({ theme }) => ({
   justifyContent: "center",
   minHeight: "85vh",
-  "& .MuiGrid-item": {
+  paddingBottom: '5em',
+  "& .MuiGrid2-root": {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",

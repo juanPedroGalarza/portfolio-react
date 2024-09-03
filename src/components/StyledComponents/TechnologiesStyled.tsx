@@ -1,10 +1,10 @@
-import { Grid, styled, alpha } from "@mui/material";
+import { Grid2, styled, alpha } from "@mui/material";
 
 interface moreProps {
   themename?: string;
 }
 
-const TechnologiesStyled = styled(Grid)<moreProps>(({ theme, themename }) => ({
+const TechnologiesStyled = styled(Grid2)<moreProps>(({ theme, themename }) => ({
   width: "90%",
   justifyContent: "space-between",
   justifyItems: "center",
@@ -13,15 +13,15 @@ const TechnologiesStyled = styled(Grid)<moreProps>(({ theme, themename }) => ({
     width: "100%",
     paddingBottom: ".5rem",
   },
-  "& > .MuiGrid-item > .MuiBox-root": {
+  "& > .MuiGrid2-root > .MuiBox-root": {
     backgroundColor: alpha(theme.palette.background.paper, 0.37),
     boxShadow: `1px 1px 8px ${alpha(theme.palette.background.paper, 0.37)}`,
     borderRadius: 3,
     padding: "2rem",
-    "& > .MuiGrid-container": {
+    "& > .MuiGrid2-container": {
       justifyContent: "center",
       alignItems: "center",
-      " > .MuiGrid-item": {
+      " > .MuiGrid2-root": {
         justifyContent: "center",
         alignItems: "center",
         display: "flex",

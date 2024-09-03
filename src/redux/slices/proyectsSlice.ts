@@ -1,5 +1,5 @@
 import { createSlice, Slice } from "@reduxjs/toolkit";
-import proyectsData, { Proyect } from "./proyectsData";
+import proyectsData, { Proyect } from "../../features/data/proyectsData.js";
 
 export interface ProyectsState {
   proyects: Array<Proyect>;

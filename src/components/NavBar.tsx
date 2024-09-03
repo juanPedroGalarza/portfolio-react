@@ -4,9 +4,9 @@ import {
   useLocation,
   useNavigate,
 } from "react-router-dom";
-import ChangeThemeButton from "./buttons/ChangeThemeButton";
-import AppBarStyled from "./StyledComponents/AppBarStyled";
-import DrawerNav from "./DrawerNav";
+import ChangeThemeButton from "./buttons/ChangeThemeButton.js";
+import AppBarStyled from "./StyledComponents/AppBarStyled.js";
+import DrawerNav from "./DrawerNav.js";
 import React from "react";
 import {
   ButtonGroup,

@@ -1,9 +1,8 @@
-import { Box, Button, Grid2, TextField, Typography } from '@mui/material';
+import { Box, Button, Grid2, Typography } from '@mui/material';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { StoreInterface } from '../redux/store.js';
 import { ThemeState } from '../features/theme/themeSlice.js';
-import ContactStyled from './StyledComponents/ContactStyled.js';
 
 interface NetworkItem {
   name: string;
@@ -90,47 +89,6 @@ export default function Contact(): JSX.Element {
       <Typography variant='h4' paragraph>
         Contact me
       </Typography>
-      <ContactStyled
-        action='https://getform.io/f/80033bce-5a64-4bc0-9ddc-4eb995407b9f'
-        method='post'>
-        <Grid2 container size={12} spacing={4}>
-          <Grid2 size={{ xs: 12, sm: 10, md: 8, lg: 6, xl: 5 }}>
-            <TextField
-              required
-              id='name-form-contact'
-              label='Name'
-              variant='outlined'
-              fullWidth
-              name='name'
-            />
-          </Grid2>
-          <Grid2 size={{ xs: 12, sm: 10, md: 8, lg: 6, xl: 5 }}>
-            <TextField
-              required
-              id='email-form-contact'
-              label='Email'
-              variant='outlined'
-              fullWidth
-              type='email'
-              name='email'
-            />
-          </Grid2>
-        </Grid2>
-        <TextField
-          required
-          id='message-form-contact'
-          label='Message'
-          variant='outlined'
-          fullWidth
-          multiline
-          minRows={7}
-          maxRows={7}
-          name='message'
-        />
-        <Button type='submit' color='success' variant='outlined'>
-          Send
-        </Button>
-      </ContactStyled>
       <Grid2
         container
         spacing={5}

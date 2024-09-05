@@ -8,18 +8,25 @@ import {
   CardHeader,
 } from '@mui/material';
 import React from 'react';
-import { Proyect } from '../../features/data/proyectsData.js';
 import SplitButtonHref from '../buttons/SplitButtonHref.js';
-import { OneBar } from '../StyledComponents/BackgroundBars.js';
 import ProyectCardStyled from '../StyledComponents/proyects/ProyectCardStyled.js';
 import ProyectImageCard from './ProyectImageCard.js';
+import { Job } from '../../features/data/jobsData.js';
 
 interface MyProps {
-  data: Proyect;
+  data: Job;
 }
 
-export default function ProyectCard({ data }: MyProps): JSX.Element {
-  const { picture, name, description, repositories, urls }: Proyect = data;
+export default function JobCard({ data }: MyProps): JSX.Element {
+  const {
+    picture,
+    description,
+    urls,
+    company,
+    fromDate,
+    position,
+    toDate,
+  }: Job = data;
 
   const [showMoreInfo, setShowMoreInfo]: [
     boolean,
@@ -30,12 +37,17 @@ export default function ProyectCard({ data }: MyProps): JSX.Element {
 
   return (
     <ProyectCardStyled raised>
-      <CardHeader title={name.split('-').join(' ')} />
+      <CardHeader title={company.split('-').join(' ')} />
       <CardActionArea
         onClick={toggleMoreInfo}
         className={showMoreInfo ? 'rotate' : ''}>
         {showMoreInfo ? (
           <CardContent>
+            <Typography>Position: {position}</Typography>
+            <Typography>
+              From: {fromDate.toDateString()}
+              {toDate && ' To: ' + toDate.toDateString()}
+            </Typography>
             {Array.isArray(description) ? (
               description.map(
                 (t: string, i: number): JSX.Element => (
@@ -47,10 +59,8 @@ export default function ProyectCard({ data }: MyProps): JSX.Element {
             )}
           </CardContent>
         ) : (
-          <ProyectImageCard image={picture} title={name} />
+          <ProyectImageCard image={picture} title={company} />
         )}
-        <OneBar bcgcolor='primary' height='3' className='card-bar' />
-        <OneBar bcgcolor='info' height='2' second='true' className='card-bar' />
       </CardActionArea>
       <CardActions disableSpacing>
         <Button
@@ -69,9 +79,6 @@ export default function ProyectCard({ data }: MyProps): JSX.Element {
           }>
           <Typography>Info</Typography>
         </Button>
-        <SplitButtonHref options={repositories}>
-          <Typography>Repostitories</Typography>
-        </SplitButtonHref>
         {urls ? (
           <SplitButtonHref options={urls}>
             <Typography>Sites</Typography>

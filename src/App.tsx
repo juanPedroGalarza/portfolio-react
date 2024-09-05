@@ -7,6 +7,7 @@ import { StoreInterface } from "./redux/store.js";
 const MainLayout = React.lazy(() => import("./layouts/MainLayout.js"));
 const Home = React.lazy(() => import("./pages/Home.js"));
 const Proyects = React.lazy(() => import("./pages/Proyects.js"));
+const Experience = React.lazy(() => import("./pages/Experience.js"));
 import darkTheme from "./features/theme/darkTheme.js";
 import lightTheme from "./features/theme/lightTheme.js";
 import { ThemeState } from "./features/theme/themeSlice.js";
@@ -34,6 +35,7 @@ function App() {
               <Routes>
                 <Route index element={<Home />} />
                 <Route path='/proyects' element={<Proyects />} />
+                <Route path='/experience' element={<Experience />} />
                 <Route path='/*' element={<Navigate to='/' />} />
               </Routes>
             </React.Suspense>

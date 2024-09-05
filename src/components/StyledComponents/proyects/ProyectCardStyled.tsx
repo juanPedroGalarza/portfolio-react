@@ -4,7 +4,7 @@ const ProyectCardStyled = styled(Card)(({ theme }) => ({
   position: "relative",
   minHeight: 360,
   overflow: "visible",
-  transform: "scale(.9)",
+  transform: "scale(.95)",
   transition: "transform .5s ease",
   "&:hover": {
     transform: "scale(1)",

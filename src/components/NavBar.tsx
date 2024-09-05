@@ -41,6 +41,7 @@ export default function Nav(): JSX.Element {
   const links: LinkForButton[] = [
     { to: "/", name: "Home" },
     { to: "/proyects", name: "Proyects" },
+    { to: "/experience", name: "Experience" },
     { to: "/#contact", name: "Contact" },
     { to: "/#about", name: "About" },
   ];

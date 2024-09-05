@@ -4,3 +4,11 @@
   box-sizing: border-box;
   font-family: "Poppins";
 }
+::-webkit-scrollbar{
+  background-color: #121212;
+  width: 7px;
+}
+::-webkit-scrollbar-thumb{
+  background-color: #323232;
+  border-radius: 28px;
+}

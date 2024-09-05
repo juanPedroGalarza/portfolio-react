@@ -18,7 +18,7 @@ const proyects: Array<Proyect> = [
       "My Portfolio made with React, TypeScript, Redux Toolkit & Material ui.",
       " Here is also a list of my projects, this is updated every time I finish one",
     ],
-    picture: "https://i.postimg.cc/LsD1SMxp/Portfolio.png",
+    picture: "https://i.postimg.cc/Hk5FpqLx/Portfolio.png",
     repositories: [
       {
         name: "Repository",

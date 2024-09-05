@@ -39,6 +39,7 @@ export default function Contact(): JSX.Element {
                 }}
               />
             }
+            target='_blank'
             href={item.href}
             color='inherit'
             variant='text'

@@ -1,7 +1,7 @@
 import { UrlNamed } from './proyectsData.js';
 
 export interface Job {
-  postion: string;
+  position: string;
   company: string;
   picture?: string;
   description: string | string[];
@@ -13,12 +13,12 @@ export interface Job {
 const jobs: Array<Job> = [
   {
     company: 'StarAppX',
-    postion: 'Frontend Web & App Developer',
+    position: 'Frontend Web & App Developer',
     description: [
       'I work on web and mobile App projects fulfilling the role of Frontend-dev with full-time modality',
       'I make projects with react and react-native. layout and integration of websites and mobile applications.',
     ],
-    picture: 'https://i.postimg.cc/LsD1SMxp/Portfolio.png',
+    picture: 'https://i.postimg.cc/xTtf3SPZ/Logo-Star-App-X-1.png',
     urls: [
       { name: 'Web Site', url: 'https://starappx.com/' },
       { name: 'Linkedin', url: 'https://www.linkedin.com/company/starappx/' },

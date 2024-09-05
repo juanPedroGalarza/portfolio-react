@@ -1,4 +1,4 @@
-import { alpha, Box, styled } from "@mui/material";
+import { Box, styled } from "@mui/material";
 
 const ProyectImageStyled = styled(Box)(({ theme }) => ({
   position: "relative",
@@ -6,7 +6,7 @@ const ProyectImageStyled = styled(Box)(({ theme }) => ({
   justifyContent: "center",
   alignItems: "center",
   height: "100%",
-  backgroundColor: `${alpha(theme.palette.grey[600], 0.87)}`,
+  backgroundColor: theme.palette.grey[800],
   "& .MuiCardMedia-img": {
     maxHeight: "100%",
     transitionDuration: theme.transitions.duration.short + "ms",

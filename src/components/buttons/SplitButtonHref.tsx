@@ -8,16 +8,39 @@ import {
   Popper,
   Paper,
   Grow,
+  ButtonPropsColorOverrides,
+  ButtonPropsVariantOverrides,
 } from '@mui/material';
+import { OverridableStringUnion } from '@mui/types';
 import { UrlNamed } from '../../features/data/proyectsData.js';
 
 interface MyProps {
   options: Array<UrlNamed>;
+  disableBlankTarget?: Boolean;
+  color?: OverridableStringUnion<
+    | 'inherit'
+    | 'primary'
+    | 'secondary'
+    | 'success'
+    | 'error'
+    | 'info'
+    | 'warning',
+    ButtonPropsColorOverrides
+  >;
+  variant?: OverridableStringUnion<
+    'text' | 'contained' | 'outlined',
+    ButtonPropsVariantOverrides
+  >;
+  endIcon?: React.ReactNode;
 }
 
 export default function SplitButtonHref({
   options,
   children,
+  disableBlankTarget,
+  color,
+  variant = 'contained',
+  endIcon,
 }: React.PropsWithChildren<MyProps>): JSX.Element {
   const [open, setOpen] = React.useState<boolean>(false);
   const anchorRef = React.useRef(null);
@@ -39,16 +62,19 @@ export default function SplitButtonHref({
   return (
     <>
       <Button
+        color={color}
         size='small'
         aria-expanded={open ? 'true' : undefined}
         aria-label='select merge strategy'
         aria-haspopup='menu'
         onClick={handleToggle}
         endIcon={
-          <Icon>{open ? 'arrow_drop_up_icon' : 'arrow_drop_down_icon'}</Icon>
+          endIcon || (
+            <Icon>{open ? 'arrow_drop_up_icon' : 'arrow_drop_down_icon'}</Icon>
+          )
         }
         ref={anchorRef}
-        variant='contained'
+        variant={variant}
         sx={{ textTransform: 'none' }}>
         {children}
       </Button>
@@ -72,7 +98,11 @@ export default function SplitButtonHref({
               <ClickAwayListener onClickAway={handleClose}>
                 <MenuList autoFocusItem>
                   {options.map((option, index) => (
-                    <MenuItem key={index} component='a' href={option.url}>
+                    <MenuItem
+                      key={index}
+                      component='a'
+                      target={disableBlankTarget ? null : '_blank'}
+                      href={option.url}>
                       {option.name}
                     </MenuItem>
                   ))}

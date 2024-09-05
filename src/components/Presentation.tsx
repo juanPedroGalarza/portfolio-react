@@ -3,9 +3,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SplitButtonHref from './buttons/SplitButtonHref.js';
 import PresentationStyled from './StyledComponents/PresentationStyled.js';
+import { UrlNamed } from '../features/data/proyectsData.js';
 
 export default function Presentation() {
-  const resumeList: Array<{ url: string; name: string }> = [
+  const resumeList: Array<UrlNamed> = [
     {
       name: 'Spanish',
       url: 'https://drive.google.com/file/d/1HFA_r6iKrYfD1tibeFIfTrglWiX7pBua/view?usp=sharing',
@@ -13,6 +14,16 @@ export default function Presentation() {
     {
       name: 'English',
       url: 'https://drive.google.com/file/d/1p5IkYhD2NNLL54nSWeiuTZBRuR7256Di/view?usp=sharing',
+    },
+  ];
+  const workList: Array<UrlNamed> = [
+    {
+      name: 'Proyects',
+      url: '/proyects',
+    },
+    {
+      name: 'Experience',
+      url: '/experience',
     },
   ];
 
@@ -47,16 +58,14 @@ export default function Presentation() {
             <Icon>assignment_ind_icon</Icon>
             <Typography sx={{ paddingLeft: 1 }}>Resume</Typography>
           </SplitButtonHref>
-          <Button
-            component={Link}
-            variant='outlined'
-            size='small'
+          <SplitButtonHref
             color='warning'
-            to='/proyects'
-            sx={{ textTransform: 'none' }}
-            endIcon={<Icon>arrow_forward_ios_rounded</Icon>}>
+            variant='outlined'
+            disableBlankTarget
+            endIcon={<Icon>arrow_forward_ios_rounded</Icon>}
+            options={workList}>
             <Typography>View Work</Typography>
-          </Button>
+          </SplitButtonHref>
         </Box>
       </Grid2>
     </PresentationStyled>

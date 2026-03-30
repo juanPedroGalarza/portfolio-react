@@ -9,11 +9,11 @@ export default function Presentation() {
   const resumeList: Array<UrlNamed> = [
     {
       name: 'Spanish',
-      url: 'https://drive.google.com/file/d/1HFA_r6iKrYfD1tibeFIfTrglWiX7pBua/view?usp=sharing',
+      url: 'https://drive.google.com/file/d/1YZw-0RX9v_sPxgxfFJygZ2vkhn1JQmjl/view?usp=sharing',
     },
     {
       name: 'English',
-      url: 'https://drive.google.com/file/d/1p5IkYhD2NNLL54nSWeiuTZBRuR7256Di/view?usp=sharing',
+      url: 'https://drive.google.com/file/d/121f2bRjpHxeV-inhEjKnjad2jlOOh2x5/view?usp=sharing',
     },
   ];
   const workList: Array<UrlNamed> = [
